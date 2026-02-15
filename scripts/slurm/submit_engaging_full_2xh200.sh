@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+trap 'echo "ERROR: submit script failed at line ${LINENO}: ${BASH_COMMAND}" >&2' ERR
 
 # Usage:
 #   bash scripts/slurm/submit_engaging_full_2xh200.sh [config] [detector] [conda_env] [datasets_csv]
@@ -34,8 +35,17 @@ SBATCH_EXPORT="ALL,VENV_PATH=${VENV_PATH:-},HF_HOME=${HF_HOME},TRANSFORMERS_CACH
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
-SLURM_LOG_DIR="${SLURM_LOG_DIR:-${REPO_ROOT}/artifacts/slurm_logs}"
+SLURM_LOG_DIR="${SLURM_LOG_DIR:-${SCRATCH_ROOT}/slurm_logs}"
 mkdir -p "${SLURM_LOG_DIR}"
+
+if ! command -v sbatch >/dev/null 2>&1; then
+  echo "ERROR: sbatch not found in PATH. Load your Slurm environment first." >&2
+  exit 2
+fi
+
+if [[ -n "${VENV_PATH:-}" && ! -f "${VENV_PATH}/bin/activate" ]]; then
+  echo "WARNING: VENV_PATH is set but missing activate script: ${VENV_PATH}/bin/activate" >&2
+fi
 
 if [[ "${NUM_SHARDS}" -ne 2 ]]; then
   echo "INFO: NUM_SHARDS is ${NUM_SHARDS}; set NUM_SHARDS=2 to use exactly two H200s." >&2
@@ -58,6 +68,7 @@ echo "  prep time: ${PREP_TIME}"
 echo "  inference time: ${INF_TIME}"
 echo "  post time: ${POST_TIME}"
 echo "  scratch root: ${SCRATCH_ROOT}"
+echo "  slurm log dir: ${SLURM_LOG_DIR}"
 echo "  sbatch export: ${SBATCH_EXPORT}"
 
 PREP_JOB_ID=$(

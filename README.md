@@ -201,6 +201,7 @@ bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.y
 
 The submit wrapper now explicitly exports key env vars (`VENV_PATH`, Hugging Face cache vars, pip cache, `TMPDIR`) into batch jobs so venv-based runs are reliable even when cluster defaults do not export your shell env.
 It also auto-detects `VENV_PATH=/orcd/scratch/$USER/gsrd/venv` when present and defaults `TMPDIR/HF_HOME/PIP_CACHE_DIR` to `/orcd/scratch/$USER/gsrd/...` to avoid home-quota failures.
+SLURM logs default to `/orcd/scratch/$USER/gsrd/slurm_logs` (override with `SLURM_LOG_DIR=...` if needed).
 
 Optional (add OOD BDD100K in the same chain):
 

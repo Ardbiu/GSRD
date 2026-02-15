@@ -1,0 +1,121 @@
+[
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "__overall__",
+    "metric": "granularity_sensitivity_index",
+    "value": 0.1286978994107809
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "__overall__",
+    "metric": "normalized_gsi_to_standard",
+    "value": 0.1767664176944595
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "coarse",
+    "metric": "vocab_instability_cv",
+    "value": 0.30298573353872216
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "coarse",
+    "metric": "vocab_worst10_map",
+    "value": 0.3202827160270669
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "coarse",
+    "metric": "vocab_median_map",
+    "value": 0.3942028665487789
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "counterfactual",
+    "metric": "vocab_instability_cv",
+    "value": 0.0001456894896655165
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "counterfactual",
+    "metric": "vocab_worst10_map",
+    "value": 0.7278411450509028
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "counterfactual",
+    "metric": "vocab_median_map",
+    "value": 0.7278996993407477
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "fine",
+    "metric": "vocab_instability_cv",
+    "value": 0.00040773154125568355
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "fine",
+    "metric": "vocab_worst10_map",
+    "value": 0.7280561905102403
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "fine",
+    "metric": "vocab_median_map",
+    "value": 0.728471217606071
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "mixed",
+    "metric": "vocab_instability_cv",
+    "value": 0.13226647229223581
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "mixed",
+    "metric": "vocab_worst10_map",
+    "value": 0.5512671042229753
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "mixed",
+    "metric": "vocab_median_map",
+    "value": 0.6511049289288056
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "standard",
+    "metric": "vocab_instability_cv",
+    "value": 0.00037725961483460425
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "standard",
+    "metric": "vocab_worst10_map",
+    "value": 0.7277562382387774
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "standard",
+    "metric": "vocab_median_map",
+    "value": 0.72803480240839
+  }
+]

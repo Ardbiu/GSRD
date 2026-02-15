@@ -1,0 +1,103 @@
+{
+  "run_id": "20260215_133715",
+  "stage": "risk",
+  "timestamp_utc": "2026-02-15T18:37:15.332533Z",
+  "seed": 20260215,
+  "deterministic": true,
+  "config": {
+    "runtime": {
+      "seed": 20260215,
+      "deterministic": true,
+      "log_level": "INFO",
+      "workdir": "."
+    },
+    "paths": {
+      "data_root": "data/local_bigger_v6",
+      "cache_root": "artifacts/local_bigger_v6/cache",
+      "outputs_root": "artifacts/local_bigger_v6/outputs",
+      "logs_root": "artifacts/local_bigger_v6/logs"
+    },
+    "datasets": {
+      "coco_val": false,
+      "bdd100k_val": false,
+      "toy": true,
+      "toy_num_images": 320,
+      "max_images": null
+    },
+    "vocab": {
+      "lists_per_granularity": 6,
+      "coarse_groups_file": null,
+      "fine_expansion_file": null,
+      "mixed_ratio": 0.5,
+      "min_terms": 4,
+      "max_terms": 24,
+      "include_counterfactual": true,
+      "counterfactual_lists": 3,
+      "counterfactual_noise_ratio": 0.25
+    },
+    "detectors": [
+      {
+        "name": "mock",
+        "enabled": true,
+        "model_id": "mock-v2-color",
+        "device": "cpu",
+        "score_threshold": 0.05,
+        "max_detections": 100
+      },
+      {
+        "name": "grounding_dino",
+        "enabled": false,
+        "model_id": "IDEA-Research/grounding-dino-base",
+        "device": "cpu",
+        "score_threshold": 0.05,
+        "max_detections": 150
+      }
+    ],
+    "inference": {
+      "batch_size": 1,
+      "num_workers": 0,
+      "skip_existing": true,
+      "save_logits": false,
+      "num_shards": 1,
+      "shard_index": 0,
+      "split_from_env": false
+    },
+    "evaluation": {
+      "iou_threshold": 0.5,
+      "bootstrap_samples": 60,
+      "bootstrap_seed": 123
+    },
+    "risk": {
+      "alphas": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "calibration_fraction": 0.25,
+      "strategy": "all",
+      "hierarchy_relax_iou": 0.5,
+      "delta": 0.05,
+      "ucb_method": "clopper_pearson",
+      "group_key": "timeofday",
+      "min_group_calibration_samples": 20
+    },
+    "reporting": {
+      "figure_dpi": 200,
+      "style": "whitegrid",
+      "title_prefix": "GSRD Local Bigger"
+    },
+    "cluster": {
+      "slurm_array_var": "SLURM_ARRAY_TASK_ID",
+      "slurm_array_count_var": "SLURM_ARRAY_TASK_COUNT"
+    }
+  },
+  "git_commit": null,
+  "hardware": {
+    "platform": "macOS-15.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "cpu": "arm",
+    "torch_cuda_available": false,
+    "gpu_count": 0,
+    "gpus": []
+  }
+}

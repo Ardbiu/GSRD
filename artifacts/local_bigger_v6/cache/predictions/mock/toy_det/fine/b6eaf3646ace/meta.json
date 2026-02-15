@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "b6eaf3646ace",
+    "terms": [
+      "heavy truck",
+      "motor rider",
+      "road car",
+      "road signal light",
+      "walking pedestrian"
+    ],
+    "class_to_term": {
+      "car": "road car",
+      "person": "walking pedestrian",
+      "rider": "motor rider",
+      "traffic light": "road signal light",
+      "truck": "heavy truck"
+    },
+    "term_to_classes": {
+      "road car": [
+        "car"
+      ],
+      "heavy truck": [
+        "truck"
+      ],
+      "walking pedestrian": [
+        "person"
+      ],
+      "motor rider": [
+        "rider"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.9841217994689941,
+    "images_per_sec": 161.2804214366481
+  },
+  "merged_file": "artifacts/local_bigger_v6/cache/predictions/mock/toy_det/fine/b6eaf3646ace/merged.jsonl.gz"
+}

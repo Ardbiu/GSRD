@@ -1,0 +1,45 @@
+2026-02-15 13:39:24,733 | INFO | gsrd.pipeline.orchestrator | Running stage: data
+2026-02-15 13:39:25,271 | INFO | gsrd.data.prepare | Saved dataset manifest to artifacts/local_bigger_v7/cache/datasets/dataset_manifest.json
+2026-02-15 13:39:25,271 | INFO | gsrd.pipeline.orchestrator | Running stage: vocab
+2026-02-15 13:39:25,282 | INFO | gsrd.vocab.generate | Generated vocabularies for toy_det -> artifacts/local_bigger_v7/cache/vocabs/toy_det_vocabs.json
+2026-02-15 13:39:25,282 | INFO | gsrd.pipeline.orchestrator | Running stage: inference
+2026-02-15 13:39:25,291 | INFO | gsrd.inference.runner | Dataset=toy_det | shard 0/1 has 320 images
+2026-02-15 13:40:17,269 | INFO | gsrd.pipeline.orchestrator | Running stage: merge
+2026-02-15 13:40:17,288 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/34774e738af0/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,297 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/4d7ee6fae11a/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,307 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/b7ebae40e614/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,316 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/b80fad14635d/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,326 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/b89220f73603/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,336 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/coarse/bd237371f3f3/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,348 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/counterfactual/0f928b030b4a/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,360 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/counterfactual/62bb72cf3cdb/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,372 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/counterfactual/c514a1b5fc98/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,405 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/0d202ebee3c7/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,415 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/3ec724496c17/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,426 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/4bbc6ade0721/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,437 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/88a50b52ee79/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,447 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/b6eaf3646ace/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,458 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/fine/f5ad5a73ce48/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,468 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/36c973acf481/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,479 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/42d4024467d3/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,489 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/699f7565023d/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,500 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/81f05b86a326/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,508 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/dd59b7531539/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,517 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/mixed/e7e68713528e/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,528 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/358cbe6de20b/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,538 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/64064c71cf12/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,549 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/8ac34aee5ca6/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,559 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/d3e2969a35fd/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,570 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/e0cbbce27746/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,580 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/local_bigger_v7/cache/predictions/mock/toy_det/standard/f79f2d6604ed/merged.jsonl.gz (320 rows)
+2026-02-15 13:40:17,580 | INFO | gsrd.pipeline.orchestrator | Running stage: eval
+2026-02-15 13:41:23,279 | INFO | gsrd.pipeline.orchestrator | Running stage: risk
+2026-02-15 13:41:26,872 | INFO | gsrd.pipeline.orchestrator | Running stage: report
+2026-02-15 13:41:30,684 | INFO | gsrd.reporting.generate | Report generated at artifacts/local_bigger_v7/outputs/report/final_report.md
+2026-02-15 13:41:30,684 | INFO | __main__ | data -> 1 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | vocab -> 1 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | inference -> 27 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | merge -> 27 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | eval -> 8 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | risk -> 3 artifacts
+2026-02-15 13:41:30,684 | INFO | __main__ | report -> 2 artifacts

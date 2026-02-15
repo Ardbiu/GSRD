@@ -1,0 +1,48 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "42d4024467d3",
+    "terms": [
+      "bike rider",
+      "intersection traffic light",
+      "road vehicle",
+      "standing person"
+    ],
+    "class_to_term": {
+      "car": "road vehicle",
+      "person": "standing person",
+      "rider": "bike rider",
+      "traffic light": "intersection traffic light",
+      "truck": "road vehicle"
+    },
+    "term_to_classes": {
+      "road vehicle": [
+        "car",
+        "truck"
+      ],
+      "standing person": [
+        "person"
+      ],
+      "bike rider": [
+        "rider"
+      ],
+      "intersection traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.9791443347930908,
+    "images_per_sec": 161.6860349063194
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/mixed/42d4024467d3/merged.jsonl.gz"
+}

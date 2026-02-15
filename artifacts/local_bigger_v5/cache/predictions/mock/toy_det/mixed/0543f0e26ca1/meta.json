@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "0543f0e26ca1",
+    "terms": [
+      "human",
+      "road signal light",
+      "sedan"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "human",
+      "traffic light": "road signal light"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "human": [
+        "person"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.7795541286468506,
+    "images_per_sec": 410.4910592359452
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/mixed/0543f0e26ca1/merged.jsonl.gz"
+}

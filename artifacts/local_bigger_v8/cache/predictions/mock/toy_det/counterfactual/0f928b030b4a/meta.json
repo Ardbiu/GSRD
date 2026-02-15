@@ -1,0 +1,55 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "counterfactual",
+  "vocab": {
+    "vocab_id": "0f928b030b4a",
+    "terms": [
+      "glass glare",
+      "partial rider",
+      "side-view person",
+      "side-view traffic light",
+      "side-view truck",
+      "tiny car",
+      "tree canopy"
+    ],
+    "class_to_term": {
+      "car": "tiny car",
+      "person": "side-view person",
+      "rider": "partial rider",
+      "traffic light": "side-view traffic light",
+      "truck": "side-view truck"
+    },
+    "term_to_classes": {
+      "tiny car": [
+        "car"
+      ],
+      "side-view truck": [
+        "truck"
+      ],
+      "side-view person": [
+        "person"
+      ],
+      "partial rider": [
+        "rider"
+      ],
+      "side-view traffic light": [
+        "traffic light"
+      ],
+      "glass glare": [],
+      "tree canopy": []
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.9671339988708496,
+    "images_per_sec": 162.67320893425793
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/counterfactual/0f928b030b4a/merged.jsonl.gz"
+}

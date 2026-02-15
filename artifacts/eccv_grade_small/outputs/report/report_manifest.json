@@ -1,0 +1,39 @@
+{
+  "summary_markdown": "artifacts/eccv_grade_small/outputs/report/final_report.md",
+  "figures": {
+    "granularity_fig": {
+      "png": "artifacts/eccv_grade_small/outputs/report/figures/granularity_sensitivity.png",
+      "pdf": "artifacts/eccv_grade_small/outputs/report/figures/granularity_sensitivity.pdf"
+    },
+    "risk_fig": {
+      "png": "artifacts/eccv_grade_small/outputs/report/figures/risk_vs_coverage.png",
+      "pdf": "artifacts/eccv_grade_small/outputs/report/figures/risk_vs_coverage.pdf"
+    }
+  },
+  "tables": {
+    "performance_csv": "artifacts/eccv_grade_small/outputs/report/tables/table_performance_by_granularity.csv",
+    "performance_tex": "artifacts/eccv_grade_small/outputs/report/tables/table_performance_by_granularity.tex",
+    "worst_drop_csv": "artifacts/eccv_grade_small/outputs/report/tables/table_worst_case_drop.csv",
+    "worst_drop_tex": "artifacts/eccv_grade_small/outputs/report/tables/table_worst_case_drop.tex",
+    "calib_csv": "artifacts/eccv_grade_small/outputs/report/tables/table_calibration_effectiveness.csv",
+    "calib_tex": "artifacts/eccv_grade_small/outputs/report/tables/table_calibration_effectiveness.tex",
+    "risk_summary_csv": "artifacts/eccv_grade_small/outputs/report/tables/table_risk_summary.csv",
+    "risk_summary_tex": "artifacts/eccv_grade_small/outputs/report/tables/table_risk_summary.tex"
+  },
+  "headline_numbers": {
+    "best_map": {
+      "detector": "mock",
+      "dataset": "toy_det",
+      "granularity": "fine",
+      "mAP_mean": 0.0001650165016501
+    },
+    "max_worst_case_drop": 0.0,
+    "risk_target_success_rate": 0.0,
+    "mean_test_coverage": 0.0
+  },
+  "counts": {
+    "n_artifact_rows": 8,
+    "n_granularity_rows": 4,
+    "n_risk_rows": 32
+  }
+}

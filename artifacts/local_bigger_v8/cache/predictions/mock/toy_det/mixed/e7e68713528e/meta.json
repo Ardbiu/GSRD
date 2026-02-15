@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "e7e68713528e",
+    "terms": [
+      "adult person",
+      "human",
+      "pickup truck",
+      "road car",
+      "traffic control"
+    ],
+    "class_to_term": {
+      "car": "road car",
+      "person": "adult person",
+      "rider": "human",
+      "traffic light": "traffic control",
+      "truck": "pickup truck"
+    },
+    "term_to_classes": {
+      "road car": [
+        "car"
+      ],
+      "pickup truck": [
+        "truck"
+      ],
+      "adult person": [
+        "person"
+      ],
+      "human": [
+        "rider"
+      ],
+      "traffic control": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 2.000072956085205,
+    "images_per_sec": 159.99416372607945
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/mixed/e7e68713528e/merged.jsonl.gz"
+}

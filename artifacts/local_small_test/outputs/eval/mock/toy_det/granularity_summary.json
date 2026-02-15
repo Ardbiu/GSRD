@@ -1,0 +1,50 @@
+[
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "coarse",
+    "mAP_mean": 0.0,
+    "mAP_std": 0.0,
+    "mAP50_mean": 0.0,
+    "mAP50_std": 0.0,
+    "n_vocab": 2,
+    "granularity_variance_mAP": 2.9546924714473644e-10,
+    "drop_from_standard_mAP": 0.0
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "fine",
+    "mAP_mean": 0.0,
+    "mAP_std": 0.0,
+    "mAP50_mean": 0.0,
+    "mAP50_std": 0.0,
+    "n_vocab": 2,
+    "granularity_variance_mAP": 2.9546924714473644e-10,
+    "drop_from_standard_mAP": 0.0
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "mixed",
+    "mAP_mean": 3.4378437843784377e-05,
+    "mAP_std": 4.861845305188033e-05,
+    "mAP50_mean": 0.00034378437843784375,
+    "mAP50_std": 0.0004861845305188033,
+    "n_vocab": 2,
+    "granularity_variance_mAP": 2.9546924714473644e-10,
+    "drop_from_standard_mAP": -3.4378437843784377e-05
+  },
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "granularity": "standard",
+    "mAP_mean": 0.0,
+    "mAP_std": 0.0,
+    "mAP50_mean": 0.0,
+    "mAP50_std": 0.0,
+    "n_vocab": 2,
+    "granularity_variance_mAP": 2.9546924714473644e-10,
+    "drop_from_standard_mAP": 0.0
+  }
+]

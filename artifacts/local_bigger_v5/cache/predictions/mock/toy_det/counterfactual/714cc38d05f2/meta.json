@@ -1,0 +1,45 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "counterfactual",
+  "vocab": {
+    "vocab_id": "714cc38d05f2",
+    "terms": [
+      "background texture",
+      "motion blur",
+      "partial car",
+      "side-view traffic light",
+      "tiny person"
+    ],
+    "class_to_term": {
+      "car": "partial car",
+      "person": "tiny person",
+      "traffic light": "side-view traffic light"
+    },
+    "term_to_classes": {
+      "partial car": [
+        "car"
+      ],
+      "tiny person": [
+        "person"
+      ],
+      "side-view traffic light": [
+        "traffic light"
+      ],
+      "motion blur": [],
+      "background texture": []
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.842473030090332,
+    "images_per_sec": 379.8341176164284
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/counterfactual/714cc38d05f2/merged.jsonl.gz"
+}

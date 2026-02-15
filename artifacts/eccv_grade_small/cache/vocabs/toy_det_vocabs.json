@@ -1,0 +1,215 @@
+{
+  "dataset": "toy_det",
+  "seed": 20260215,
+  "lists_per_granularity": 2,
+  "granularities": {
+    "standard": [
+      {
+        "vocab_id": "df6d273a01d3",
+        "granularity": "standard",
+        "terms": [
+          "car",
+          "person",
+          "traffic light"
+        ],
+        "class_to_term": {
+          "car": "car",
+          "person": "person",
+          "traffic light": "traffic light"
+        },
+        "term_to_classes": {
+          "car": [
+            "car"
+          ],
+          "person": [
+            "person"
+          ],
+          "traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "90e6f0989452",
+        "granularity": "standard",
+        "terms": [
+          "car object",
+          "person object",
+          "traffic light object"
+        ],
+        "class_to_term": {
+          "car": "car object",
+          "person": "person object",
+          "traffic light": "traffic light object"
+        },
+        "term_to_classes": {
+          "car object": [
+            "car"
+          ],
+          "person object": [
+            "person"
+          ],
+          "traffic light object": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "coarse": [
+      {
+        "vocab_id": "2b5ea2c24c5b",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road control sign",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "human",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "1dff153c87c3",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road control sign",
+          "road vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "fine": [
+      {
+        "vocab_id": "80a9718ced4a",
+        "granularity": "fine",
+        "terms": [
+          "road signal light",
+          "sedan",
+          "walking pedestrian"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "walking pedestrian",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "walking pedestrian": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "6e90290caaca",
+        "granularity": "fine",
+        "terms": [
+          "adult person",
+          "road car",
+          "road signal light"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "adult person",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "vocab_id": "582eef73297a",
+        "granularity": "mixed",
+        "terms": [
+          "road car",
+          "road control sign",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "standing person",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "efc6edc91192",
+        "granularity": "mixed",
+        "terms": [
+          "human",
+          "intersection traffic light",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "human",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      }
+    ]
+  }
+}

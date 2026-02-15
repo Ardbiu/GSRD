@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "standard",
+  "vocab": {
+    "vocab_id": "358cbe6de20b",
+    "terms": [
+      "a rider",
+      "a traffic light",
+      "a truck",
+      "car object",
+      "person instance"
+    ],
+    "class_to_term": {
+      "car": "car object",
+      "person": "person instance",
+      "rider": "a rider",
+      "traffic light": "a traffic light",
+      "truck": "a truck"
+    },
+    "term_to_classes": {
+      "car object": [
+        "car"
+      ],
+      "a truck": [
+        "truck"
+      ],
+      "person instance": [
+        "person"
+      ],
+      "a rider": [
+        "rider"
+      ],
+      "a traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.8961410522460938,
+    "images_per_sec": 168.76381618389658
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/standard/358cbe6de20b/merged.jsonl.gz"
+}

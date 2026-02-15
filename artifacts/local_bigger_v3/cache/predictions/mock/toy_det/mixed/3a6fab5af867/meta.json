@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "3a6fab5af867",
+    "terms": [
+      "road control sign",
+      "sedan",
+      "walking pedestrian"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "walking pedestrian",
+      "traffic light": "road control sign"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "walking pedestrian": [
+        "person"
+      ],
+      "road control sign": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8000102043151855,
+    "images_per_sec": 399.9948979074864
+  },
+  "merged_file": "artifacts/local_bigger_v3/cache/predictions/mock/toy_det/mixed/3a6fab5af867/merged.jsonl.gz"
+}

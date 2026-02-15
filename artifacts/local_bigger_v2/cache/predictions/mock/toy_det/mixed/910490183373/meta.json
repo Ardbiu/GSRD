@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "910490183373",
+    "terms": [
+      "road signal light",
+      "road vehicle",
+      "walking pedestrian"
+    ],
+    "class_to_term": {
+      "car": "road vehicle",
+      "person": "walking pedestrian",
+      "traffic light": "road signal light"
+    },
+    "term_to_classes": {
+      "road vehicle": [
+        "car"
+      ],
+      "walking pedestrian": [
+        "person"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 3.9359359741210938,
+    "images_per_sec": 81.30213552862911
+  },
+  "merged_file": "artifacts/local_bigger_v2/cache/predictions/mock/toy_det/mixed/910490183373/merged.jsonl.gz"
+}

@@ -1,0 +1,163 @@
+detector,dataset,granularity,vocab_id,domain_key,domain_value,num_images,mAP,mAP50
+mock,toy_det,coarse,34774e738af0,timeofday,daytime,214,0.41612657204296133,0.5136138613861386
+mock,toy_det,coarse,34774e738af0,timeofday,night,106,0.4222161581617743,0.5123762376237624
+mock,toy_det,coarse,34774e738af0,weather,clear,213,0.39866831974118677,0.4931389232673267
+mock,toy_det,coarse,34774e738af0,weather,rainy,107,0.41889069467779033,0.5136138613861386
+mock,toy_det,coarse,34774e738af0,scene,city street,214,0.41612657204296133,0.5136138613861386
+mock,toy_det,coarse,34774e738af0,scene,urban night,106,0.4222161581617743,0.5123762376237624
+mock,toy_det,coarse,4d7ee6fae11a,timeofday,daytime,214,0.407473559118825,0.5
+mock,toy_det,coarse,4d7ee6fae11a,timeofday,night,106,0.3297850920823967,0.4
+mock,toy_det,coarse,4d7ee6fae11a,weather,clear,213,0.3513670753981629,0.4341150990099009
+mock,toy_det,coarse,4d7ee6fae11a,weather,rainy,107,0.4109565748338965,0.5
+mock,toy_det,coarse,4d7ee6fae11a,scene,city street,214,0.407473559118825,0.5
+mock,toy_det,coarse,4d7ee6fae11a,scene,urban night,106,0.3297850920823967,0.4
+mock,toy_det,coarse,b7ebae40e614,timeofday,daytime,214,0.3162896653169972,0.3884667728039509
+mock,toy_det,coarse,b7ebae40e614,timeofday,night,106,0.22610247999771413,0.2851485148514851
+mock,toy_det,coarse,b7ebae40e614,weather,clear,213,0.25490856776378445,0.3201677000123385
+mock,toy_det,coarse,b7ebae40e614,weather,rainy,107,0.31635454196677393,0.3873935580527141
+mock,toy_det,coarse,b7ebae40e614,scene,city street,214,0.3162896653169972,0.3884667728039509
+mock,toy_det,coarse,b7ebae40e614,scene,urban night,106,0.22610247999771413,0.2851485148514851
+mock,toy_det,coarse,b80fad14635d,timeofday,daytime,214,0.7168866250411801,0.8745874587458746
+mock,toy_det,coarse,b80fad14635d,timeofday,night,106,0.4716707547895277,0.5808580858085809
+mock,toy_det,coarse,b80fad14635d,weather,clear,213,0.5917859198335489,0.7293729372937293
+mock,toy_det,coarse,b80fad14635d,weather,rainy,107,0.7197773491526152,0.8745874587458746
+mock,toy_det,coarse,b80fad14635d,scene,city street,214,0.7168866250411801,0.8745874587458746
+mock,toy_det,coarse,b80fad14635d,scene,urban night,106,0.4716707547895277,0.5808580858085809
+mock,toy_det,coarse,b89220f73603,timeofday,daytime,214,0.7112259151577919,0.8646864686468647
+mock,toy_det,coarse,b89220f73603,timeofday,night,106,0.4773176278166636,0.5874587458745875
+mock,toy_det,coarse,b89220f73603,weather,clear,213,0.5925880941594944,0.7293729372937293
+mock,toy_det,coarse,b89220f73603,weather,rainy,107,0.7090050178339652,0.858085808580858
+mock,toy_det,coarse,b89220f73603,scene,city street,214,0.7112259151577919,0.8646864686468647
+mock,toy_det,coarse,b89220f73603,scene,urban night,106,0.4773176278166636,0.5874587458745875
+mock,toy_det,coarse,bd237371f3f3,timeofday,daytime,214,0.40415691474703513,0.4998430361800222
+mock,toy_det,coarse,bd237371f3f3,timeofday,night,106,0.4088594891504131,0.49808737972213507
+mock,toy_det,coarse,bd237371f3f3,weather,clear,213,0.3849929613006092,0.47683308901764887
+mock,toy_det,coarse,bd237371f3f3,weather,rainy,107,0.40619771889701806,0.4996589091328668
+mock,toy_det,coarse,bd237371f3f3,scene,city street,214,0.40415691474703513,0.4998430361800222
+mock,toy_det,coarse,bd237371f3f3,scene,urban night,106,0.4088594891504131,0.49808737972213507
+mock,toy_det,counterfactual,0f928b030b4a,timeofday,daytime,214,0.8433609328316278,1.0
+mock,toy_det,counterfactual,0f928b030b4a,timeofday,night,106,0.5027802925590537,0.6
+mock,toy_det,counterfactual,0f928b030b4a,weather,clear,213,0.6716990466492554,0.801980198019802
+mock,toy_det,counterfactual,0f928b030b4a,weather,rainy,107,0.8458097305462886,1.0
+mock,toy_det,counterfactual,0f928b030b4a,scene,city street,214,0.8433609328316278,1.0
+mock,toy_det,counterfactual,0f928b030b4a,scene,urban night,106,0.5027802925590537,0.6
+mock,toy_det,counterfactual,62bb72cf3cdb,timeofday,daytime,214,0.8436123301550184,1.0
+mock,toy_det,counterfactual,62bb72cf3cdb,timeofday,night,106,0.5013977022829793,0.6
+mock,toy_det,counterfactual,62bb72cf3cdb,weather,clear,213,0.6717498798633764,0.801980198019802
+mock,toy_det,counterfactual,62bb72cf3cdb,weather,rainy,107,0.8456207883363974,1.0
+mock,toy_det,counterfactual,62bb72cf3cdb,scene,city street,214,0.8436123301550184,1.0
+mock,toy_det,counterfactual,62bb72cf3cdb,scene,urban night,106,0.5013977022829793,0.6
+mock,toy_det,counterfactual,c514a1b5fc98,timeofday,daytime,214,0.8439665944399609,1.0
+mock,toy_det,counterfactual,c514a1b5fc98,timeofday,night,106,0.5020067232176364,0.6
+mock,toy_det,counterfactual,c514a1b5fc98,weather,clear,213,0.6719398781044801,0.801980198019802
+mock,toy_det,counterfactual,c514a1b5fc98,weather,rainy,107,0.8459400179342507,1.0
+mock,toy_det,counterfactual,c514a1b5fc98,scene,city street,214,0.8439665944399609,1.0
+mock,toy_det,counterfactual,c514a1b5fc98,scene,urban night,106,0.5020067232176364,0.6
+mock,toy_det,fine,0d202ebee3c7,timeofday,daytime,214,0.8433950100824277,1.0
+mock,toy_det,fine,0d202ebee3c7,timeofday,night,106,0.5020143960225404,0.6
+mock,toy_det,fine,0d202ebee3c7,weather,clear,213,0.671907527088151,0.801980198019802
+mock,toy_det,fine,0d202ebee3c7,weather,rainy,107,0.845530851198105,1.0
+mock,toy_det,fine,0d202ebee3c7,scene,city street,214,0.8433950100824277,1.0
+mock,toy_det,fine,0d202ebee3c7,scene,urban night,106,0.5020143960225404,0.6
+mock,toy_det,fine,3ec724496c17,timeofday,daytime,214,0.8447846816698417,1.0
+mock,toy_det,fine,3ec724496c17,timeofday,night,106,0.502569102706534,0.6
+mock,toy_det,fine,3ec724496c17,weather,clear,213,0.6717590607930078,0.801980198019802
+mock,toy_det,fine,3ec724496c17,weather,rainy,107,0.8484535000742286,1.0
+mock,toy_det,fine,3ec724496c17,scene,city street,214,0.8447846816698417,1.0
+mock,toy_det,fine,3ec724496c17,scene,urban night,106,0.502569102706534,0.6
+mock,toy_det,fine,4bbc6ade0721,timeofday,daytime,214,0.8445422084368399,1.0
+mock,toy_det,fine,4bbc6ade0721,timeofday,night,106,0.5016559705053939,0.6
+mock,toy_det,fine,4bbc6ade0721,weather,clear,213,0.6716666686845373,0.801980198019802
+mock,toy_det,fine,4bbc6ade0721,weather,rainy,107,0.8471099577438901,1.0
+mock,toy_det,fine,4bbc6ade0721,scene,city street,214,0.8445422084368399,1.0
+mock,toy_det,fine,4bbc6ade0721,scene,urban night,106,0.5016559705053939,0.6
+mock,toy_det,fine,88a50b52ee79,timeofday,daytime,214,0.8443669529300826,1.0
+mock,toy_det,fine,88a50b52ee79,timeofday,night,106,0.5020828577268109,0.6
+mock,toy_det,fine,88a50b52ee79,weather,clear,213,0.6717910615631951,0.801980198019802
+mock,toy_det,fine,88a50b52ee79,weather,rainy,107,0.8472111433909821,1.0
+mock,toy_det,fine,88a50b52ee79,scene,city street,214,0.8443669529300826,1.0
+mock,toy_det,fine,88a50b52ee79,scene,urban night,106,0.5020828577268109,0.6
+mock,toy_det,fine,b6eaf3646ace,timeofday,daytime,214,0.8446931032183492,1.0
+mock,toy_det,fine,b6eaf3646ace,timeofday,night,106,0.5021152334733959,0.6
+mock,toy_det,fine,b6eaf3646ace,weather,clear,213,0.6722967797659312,0.801980198019802
+mock,toy_det,fine,b6eaf3646ace,weather,rainy,107,0.8470084555769956,1.0
+mock,toy_det,fine,b6eaf3646ace,scene,city street,214,0.8446931032183492,1.0
+mock,toy_det,fine,b6eaf3646ace,scene,urban night,106,0.5021152334733959,0.6
+mock,toy_det,fine,f5ad5a73ce48,timeofday,daytime,214,0.8445989177108538,1.0
+mock,toy_det,fine,f5ad5a73ce48,timeofday,night,106,0.5026685530375882,0.6
+mock,toy_det,fine,f5ad5a73ce48,weather,clear,213,0.6717615427425363,0.801980198019802
+mock,toy_det,fine,f5ad5a73ce48,weather,rainy,107,0.847948240185042,1.0
+mock,toy_det,fine,f5ad5a73ce48,scene,city street,214,0.8445989177108538,1.0
+mock,toy_det,fine,f5ad5a73ce48,scene,urban night,106,0.5026685530375882,0.6
+mock,toy_det,mixed,36c973acf481,timeofday,daytime,214,0.6417505200720249,0.7721364318290673
+mock,toy_det,mixed,36c973acf481,timeofday,night,106,0.3248732817972256,0.4
+mock,toy_det,mixed,36c973acf481,weather,clear,213,0.4789229176990465,0.5841605387580391
+mock,toy_det,mixed,36c973acf481,weather,rainy,107,0.6526161025840034,0.7809284728567403
+mock,toy_det,mixed,36c973acf481,scene,city street,214,0.6417505200720249,0.7721364318290673
+mock,toy_det,mixed,36c973acf481,scene,urban night,106,0.3248732817972256,0.4
+mock,toy_det,mixed,42d4024467d3,timeofday,daytime,214,0.8352286475227123,1.0
+mock,toy_det,mixed,42d4024467d3,timeofday,night,106,0.5185292989481058,0.6262376237623762
+mock,toy_det,mixed,42d4024467d3,weather,clear,213,0.6741400082625528,0.8143564356435643
+mock,toy_det,mixed,42d4024467d3,weather,rainy,107,0.8379154095614954,1.0
+mock,toy_det,mixed,42d4024467d3,scene,city street,214,0.8352286475227123,1.0
+mock,toy_det,mixed,42d4024467d3,scene,urban night,106,0.5185292989481058,0.6262376237623762
+mock,toy_det,mixed,699f7565023d,timeofday,daytime,214,0.8432587286070481,1.0
+mock,toy_det,mixed,699f7565023d,timeofday,night,106,0.5021415097651424,0.6
+mock,toy_det,mixed,699f7565023d,weather,clear,213,0.671964408476797,0.801980198019802
+mock,toy_det,mixed,699f7565023d,weather,rainy,107,0.8456557669318471,1.0
+mock,toy_det,mixed,699f7565023d,scene,city street,214,0.8432587286070481,1.0
+mock,toy_det,mixed,699f7565023d,scene,urban night,106,0.5021415097651424,0.6
+mock,toy_det,mixed,81f05b86a326,timeofday,daytime,214,0.8445018629491673,1.0
+mock,toy_det,mixed,81f05b86a326,timeofday,night,106,0.5024749207931085,0.6
+mock,toy_det,mixed,81f05b86a326,weather,clear,213,0.6715599276774062,0.801980198019802
+mock,toy_det,mixed,81f05b86a326,weather,rainy,107,0.8478553252325186,1.0
+mock,toy_det,mixed,81f05b86a326,scene,city street,214,0.8445018629491673,1.0
+mock,toy_det,mixed,81f05b86a326,scene,urban night,106,0.5024749207931085,0.6
+mock,toy_det,mixed,dd59b7531539,timeofday,daytime,214,0.6869843122381156,0.8198019801980198
+mock,toy_det,mixed,dd59b7531539,timeofday,night,106,0.35758544975566064,0.43366336633663366
+mock,toy_det,mixed,dd59b7531539,weather,clear,213,0.5278638288267054,0.6356435643564357
+mock,toy_det,mixed,dd59b7531539,weather,rainy,107,0.6772411675030244,0.805940594059406
+mock,toy_det,mixed,dd59b7531539,scene,city street,214,0.6869843122381156,0.8198019801980198
+mock,toy_det,mixed,dd59b7531539,scene,urban night,106,0.35758544975566064,0.43366336633663366
+mock,toy_det,mixed,e7e68713528e,timeofday,daytime,214,0.6882105063275407,0.8198019801980198
+mock,toy_det,mixed,e7e68713528e,timeofday,night,106,0.3307621849418097,0.401980198019802
+mock,toy_det,mixed,e7e68713528e,weather,clear,213,0.5163381433491668,0.6217821782178218
+mock,toy_det,mixed,e7e68713528e,weather,rainy,107,0.6753929720367884,0.801980198019802
+mock,toy_det,mixed,e7e68713528e,scene,city street,214,0.6882105063275407,0.8198019801980198
+mock,toy_det,mixed,e7e68713528e,scene,urban night,106,0.3307621849418097,0.401980198019802
+mock,toy_det,standard,358cbe6de20b,timeofday,daytime,214,0.8438623076022991,1.0
+mock,toy_det,standard,358cbe6de20b,timeofday,night,106,0.5012245271608695,0.6
+mock,toy_det,standard,358cbe6de20b,weather,clear,213,0.6716287517282066,0.801980198019802
+mock,toy_det,standard,358cbe6de20b,weather,rainy,107,0.8466490569011613,1.0
+mock,toy_det,standard,358cbe6de20b,scene,city street,214,0.8438623076022991,1.0
+mock,toy_det,standard,358cbe6de20b,scene,urban night,106,0.5012245271608695,0.6
+mock,toy_det,standard,64064c71cf12,timeofday,daytime,214,0.8441551050939288,1.0
+mock,toy_det,standard,64064c71cf12,timeofday,night,106,0.502777246237092,0.6
+mock,toy_det,standard,64064c71cf12,weather,clear,213,0.6715536593895187,0.801980198019802
+mock,toy_det,standard,64064c71cf12,weather,rainy,107,0.8475289387002312,1.0
+mock,toy_det,standard,64064c71cf12,scene,city street,214,0.8441551050939288,1.0
+mock,toy_det,standard,64064c71cf12,scene,urban night,106,0.502777246237092,0.6
+mock,toy_det,standard,8ac34aee5ca6,timeofday,daytime,214,0.8432038370350841,1.0
+mock,toy_det,standard,8ac34aee5ca6,timeofday,night,106,0.5030999091630548,0.6
+mock,toy_det,standard,8ac34aee5ca6,weather,clear,213,0.6711813354600726,0.801980198019802
+mock,toy_det,standard,8ac34aee5ca6,weather,rainy,107,0.8469836207649392,1.0
+mock,toy_det,standard,8ac34aee5ca6,scene,city street,214,0.8432038370350841,1.0
+mock,toy_det,standard,8ac34aee5ca6,scene,urban night,106,0.5030999091630548,0.6
+mock,toy_det,standard,d3e2969a35fd,timeofday,daytime,214,0.8436035185044919,1.0
+mock,toy_det,standard,d3e2969a35fd,timeofday,night,106,0.5030912465245143,0.6
+mock,toy_det,standard,d3e2969a35fd,weather,clear,213,0.6722297427781856,0.801980198019802
+mock,toy_det,standard,d3e2969a35fd,weather,rainy,107,0.8463407738444235,1.0
+mock,toy_det,standard,d3e2969a35fd,scene,city street,214,0.8436035185044919,1.0
+mock,toy_det,standard,d3e2969a35fd,scene,urban night,106,0.5030912465245143,0.6
+mock,toy_det,standard,e0cbbce27746,timeofday,daytime,214,0.8433529897195952,1.0
+mock,toy_det,standard,e0cbbce27746,timeofday,night,106,0.5021418155574373,0.6
+mock,toy_det,standard,e0cbbce27746,weather,clear,213,0.6713503497949037,0.801980198019802
+mock,toy_det,standard,e0cbbce27746,weather,rainy,107,0.8459506541300116,1.0
+mock,toy_det,standard,e0cbbce27746,scene,city street,214,0.8433529897195952,1.0
+mock,toy_det,standard,e0cbbce27746,scene,urban night,106,0.5021418155574373,0.6
+mock,toy_det,standard,f79f2d6604ed,timeofday,daytime,214,0.8437749415147475,1.0
+mock,toy_det,standard,f79f2d6604ed,timeofday,night,106,0.5031819217317245,0.6
+mock,toy_det,standard,f79f2d6604ed,weather,clear,213,0.672060006996113,0.801980198019802
+mock,toy_det,standard,f79f2d6604ed,weather,rainy,107,0.8458554719537816,1.0
+mock,toy_det,standard,f79f2d6604ed,scene,city street,214,0.8437749415147475,1.0
+mock,toy_det,standard,f79f2d6604ed,scene,urban night,106,0.5031819217317245,0.6

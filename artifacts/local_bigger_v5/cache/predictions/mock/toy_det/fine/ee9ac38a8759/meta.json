@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "ee9ac38a8759",
+    "terms": [
+      "intersection traffic light",
+      "sedan",
+      "standing person"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "standing person",
+      "traffic light": "intersection traffic light"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "standing person": [
+        "person"
+      ],
+      "intersection traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8131320476531982,
+    "images_per_sec": 393.54001717625124
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/fine/ee9ac38a8759/merged.jsonl.gz"
+}

@@ -1,0 +1,26 @@
+2026-02-15 12:51:04,283 | INFO | gsrd.pipeline.orchestrator | Running stage: data
+2026-02-15 12:51:04,597 | INFO | gsrd.data.prepare | Saved dataset manifest to artifacts/smoke_run/cache/datasets/dataset_manifest.json
+2026-02-15 12:51:04,598 | INFO | gsrd.pipeline.orchestrator | Running stage: vocab
+2026-02-15 12:51:04,647 | INFO | gsrd.vocab.generate | Generated vocabularies for toy_det -> artifacts/smoke_run/cache/vocabs/toy_det_vocabs.json
+2026-02-15 12:51:04,647 | INFO | gsrd.pipeline.orchestrator | Running stage: inference
+2026-02-15 12:51:04,691 | INFO | gsrd.inference.runner | Dataset=toy_det | shard 0/1 has 24 images
+2026-02-15 12:51:05,123 | INFO | gsrd.pipeline.orchestrator | Running stage: merge
+2026-02-15 12:51:05,163 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/coarse/1dff153c87c3/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,167 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/coarse/2b5ea2c24c5b/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,172 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/fine/6e90290caaca/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,175 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/fine/80a9718ced4a/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,179 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/mixed/582eef73297a/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,181 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/mixed/efc6edc91192/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,184 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/standard/90e6f0989452/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,187 | INFO | gsrd.inference.cache | Merged 1 shards -> artifacts/smoke_run/cache/predictions/mock/toy_det/standard/df6d273a01d3/merged.jsonl.gz (24 rows)
+2026-02-15 12:51:05,188 | INFO | gsrd.pipeline.orchestrator | Running stage: eval
+2026-02-15 12:51:14,452 | INFO | gsrd.pipeline.orchestrator | Running stage: risk
+2026-02-15 12:51:14,682 | INFO | gsrd.pipeline.orchestrator | Running stage: report
+2026-02-15 12:51:18,590 | INFO | gsrd.reporting.generate | Report generated at artifacts/smoke_run/outputs/report/final_report.md
+2026-02-15 12:51:18,591 | INFO | __main__ | data -> 1 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | vocab -> 1 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | inference -> 8 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | merge -> 8 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | eval -> 6 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | risk -> 2 artifacts
+2026-02-15 12:51:18,591 | INFO | __main__ | report -> 2 artifacts

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "15dc1ad69bc7",
+    "terms": [
+      "intersection traffic light",
+      "standing person",
+      "street vehicle"
+    ],
+    "class_to_term": {
+      "car": "street vehicle",
+      "person": "standing person",
+      "traffic light": "intersection traffic light"
+    },
+    "term_to_classes": {
+      "street vehicle": [
+        "car"
+      ],
+      "standing person": [
+        "person"
+      ],
+      "intersection traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8350121974945068,
+    "images_per_sec": 383.2279348255929
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/mixed/15dc1ad69bc7/merged.jsonl.gz"
+}

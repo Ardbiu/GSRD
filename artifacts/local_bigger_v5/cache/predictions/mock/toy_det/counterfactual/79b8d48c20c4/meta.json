@@ -1,0 +1,45 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "counterfactual",
+  "vocab": {
+    "vocab_id": "79b8d48c20c4",
+    "terms": [
+      "building facade",
+      "camera flare",
+      "distant car",
+      "partial traffic light",
+      "side-view person"
+    ],
+    "class_to_term": {
+      "car": "distant car",
+      "person": "side-view person",
+      "traffic light": "partial traffic light"
+    },
+    "term_to_classes": {
+      "distant car": [
+        "car"
+      ],
+      "side-view person": [
+        "person"
+      ],
+      "partial traffic light": [
+        "traffic light"
+      ],
+      "camera flare": [],
+      "building facade": []
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8271389007568359,
+    "images_per_sec": 386.8757710551378
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/counterfactual/79b8d48c20c4/merged.jsonl.gz"
+}

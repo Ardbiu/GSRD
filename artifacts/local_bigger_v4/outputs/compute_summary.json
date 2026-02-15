@@ -1,0 +1,10 @@
+{
+  "total_images_processed": 7680,
+  "total_runtime_sec": 20.036808967590332,
+  "artifacts": 24,
+  "avg_images_per_sec": 383.29456613687586,
+  "approx_gpu_hours": 0.005565780268775092,
+  "gpu_type": "cpu",
+  "gpu_count": 0,
+  "summary_hash": "2141cb32ec02"
+}

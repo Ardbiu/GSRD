@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "935084ee219f",
+    "terms": [
+      "adult person",
+      "hatchback",
+      "road signal light"
+    ],
+    "class_to_term": {
+      "car": "hatchback",
+      "person": "adult person",
+      "traffic light": "road signal light"
+    },
+    "term_to_classes": {
+      "hatchback": [
+        "car"
+      ],
+      "adult person": [
+        "person"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8531498908996582,
+    "images_per_sec": 375.0806316842585
+  },
+  "merged_file": "artifacts/local_bigger_v3/cache/predictions/mock/toy_det/fine/935084ee219f/merged.jsonl.gz"
+}

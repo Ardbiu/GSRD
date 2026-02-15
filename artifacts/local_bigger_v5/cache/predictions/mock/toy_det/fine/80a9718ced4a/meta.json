@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "80a9718ced4a",
+    "terms": [
+      "road signal light",
+      "sedan",
+      "walking pedestrian"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "walking pedestrian",
+      "traffic light": "road signal light"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "walking pedestrian": [
+        "person"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.7869198322296143,
+    "images_per_sec": 406.6487930458304
+  },
+  "merged_file": "artifacts/local_bigger_v5/cache/predictions/mock/toy_det/fine/80a9718ced4a/merged.jsonl.gz"
+}

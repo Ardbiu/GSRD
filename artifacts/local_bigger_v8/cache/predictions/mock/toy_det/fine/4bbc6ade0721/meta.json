@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "4bbc6ade0721",
+    "terms": [
+      "bike rider",
+      "cargo truck",
+      "road signal light",
+      "sedan",
+      "standing person"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "standing person",
+      "rider": "bike rider",
+      "traffic light": "road signal light",
+      "truck": "cargo truck"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "cargo truck": [
+        "truck"
+      ],
+      "standing person": [
+        "person"
+      ],
+      "bike rider": [
+        "rider"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.9423749446868896,
+    "images_per_sec": 164.7467708926733
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/fine/4bbc6ade0721/merged.jsonl.gz"
+}

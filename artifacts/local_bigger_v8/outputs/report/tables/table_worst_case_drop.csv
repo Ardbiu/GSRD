@@ -1,0 +1,2 @@
+detector,dataset,worst_case_drop_mAP,mean_drop_mAP,min_robustness_to_standard
+mock,toy_det,0.2791553000081275,0.0727067004196991,0.616580514609975

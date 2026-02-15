@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "699f7565023d",
+    "terms": [
+      "cargo truck",
+      "human",
+      "motor rider",
+      "road control sign",
+      "sedan"
+    ],
+    "class_to_term": {
+      "car": "sedan",
+      "person": "human",
+      "rider": "motor rider",
+      "traffic light": "road control sign",
+      "truck": "cargo truck"
+    },
+    "term_to_classes": {
+      "sedan": [
+        "car"
+      ],
+      "cargo truck": [
+        "truck"
+      ],
+      "human": [
+        "person"
+      ],
+      "motor rider": [
+        "rider"
+      ],
+      "road control sign": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 2.007081985473633,
+    "images_per_sec": 159.43544026403393
+  },
+  "merged_file": "artifacts/local_bigger_v6/cache/predictions/mock/toy_det/mixed/699f7565023d/merged.jsonl.gz"
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "fine",
+  "vocab": {
+    "vocab_id": "6443cba9b401",
+    "terms": [
+      "hatchback",
+      "road signal light",
+      "walking pedestrian"
+    ],
+    "class_to_term": {
+      "car": "hatchback",
+      "person": "walking pedestrian",
+      "traffic light": "road signal light"
+    },
+    "term_to_classes": {
+      "hatchback": [
+        "car"
+      ],
+      "walking pedestrian": [
+        "person"
+      ],
+      "road signal light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 4.291001796722412,
+    "images_per_sec": 74.57465998835633
+  },
+  "merged_file": "artifacts/local_bigger_v2/cache/predictions/mock/toy_det/fine/6443cba9b401/merged.jsonl.gz"
+}

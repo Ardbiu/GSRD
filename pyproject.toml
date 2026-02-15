@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gsrd"
+version = "0.1.0"
+description = "Granularity- and Shift-Robust Detection: reproducible open-vocabulary evaluation and risk control"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "GSRD Contributors" }
+]
+dependencies = [
+  "typer>=0.12.3",
+  "pydantic>=2.8.0",
+  "PyYAML>=6.0.1",
+  "numpy>=1.26.0",
+  "pandas>=2.1.0",
+  "matplotlib>=3.8.0",
+  "seaborn>=0.13.0",
+  "scipy>=1.11.0",
+  "pycocotools>=2.0.7",
+  "torch>=2.1.0",
+  "torchvision>=0.16.0",
+  "transformers>=4.44.0",
+  "Pillow>=10.0.0",
+  "requests>=2.31.0",
+  "tqdm>=4.66.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-cov>=4.1.0",
+  "ruff>=0.6.0",
+  "mypy>=1.11.0"
+]
+
+[project.scripts]
+gsrd = "gsrd.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

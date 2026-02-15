@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "coarse",
+  "vocab": {
+    "vocab_id": "72302dfd90d4",
+    "terms": [
+      "human",
+      "street vehicle",
+      "traffic control"
+    ],
+    "class_to_term": {
+      "car": "street vehicle",
+      "person": "human",
+      "traffic light": "traffic control"
+    },
+    "term_to_classes": {
+      "street vehicle": [
+        "car"
+      ],
+      "human": [
+        "person"
+      ],
+      "traffic control": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.7965848445892334,
+    "images_per_sec": 401.7148985115466
+  },
+  "merged_file": "artifacts/local_bigger_v3/cache/predictions/mock/toy_det/coarse/72302dfd90d4/merged.jsonl.gz"
+}

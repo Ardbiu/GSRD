@@ -1,0 +1,74 @@
+runtime:
+  seed: 20260215
+  deterministic: true
+  log_level: INFO
+  workdir: .
+
+paths:
+  data_root: /home/$USER/gsrd/data
+  cache_root: /home/$USER/gsrd/artifacts/cache
+  outputs_root: /home/$USER/gsrd/artifacts/outputs
+  logs_root: /home/$USER/gsrd/artifacts/logs
+
+datasets:
+  coco_val: true
+  bdd100k_val: true
+  toy: false
+  toy_num_images: 24
+  max_images: null
+
+vocab:
+  lists_per_granularity: 8
+  mixed_ratio: 0.5
+  min_terms: 8
+  max_terms: 64
+  include_counterfactual: true
+  counterfactual_lists: 4
+  counterfactual_noise_ratio: 0.2
+
+detectors:
+  - name: grounding_dino
+    enabled: true
+    model_id: IDEA-Research/grounding-dino-base
+    device: cuda
+    score_threshold: 0.05
+    max_detections: 300
+  - name: owlvit
+    enabled: false
+    model_id: google/owlvit-base-patch32
+    device: cuda
+    score_threshold: 0.05
+    max_detections: 300
+
+inference:
+  batch_size: 1
+  num_workers: 0
+  skip_existing: true
+  save_logits: false
+  num_shards: 64
+  shard_index: 0
+  split_from_env: true
+
+evaluation:
+  iou_threshold: 0.5
+  bootstrap_samples: 100
+  bootstrap_seed: 123
+
+risk:
+  alphas: [0.05, 0.1, 0.2]
+  calibration_fraction: 0.25
+  strategy: all
+  hierarchy_relax_iou: 0.5
+  delta: 0.05
+  ucb_method: clopper_pearson
+  group_key: timeofday
+  min_group_calibration_samples: 50
+
+reporting:
+  figure_dpi: 220
+  style: whitegrid
+  title_prefix: GSRD Full
+
+cluster:
+  slurm_array_var: SLURM_ARRAY_TASK_ID
+  slurm_array_count_var: SLURM_ARRAY_TASK_COUNT

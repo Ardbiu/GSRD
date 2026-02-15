@@ -1,0 +1,953 @@
+{
+  "dataset": "toy_det",
+  "seed": 20260215,
+  "lists_per_granularity": 6,
+  "granularities": {
+    "standard": [
+      {
+        "vocab_id": "e0cbbce27746",
+        "granularity": "standard",
+        "terms": [
+          "car",
+          "target person",
+          "target rider",
+          "the traffic light",
+          "visible truck"
+        ],
+        "class_to_term": {
+          "car": "car",
+          "person": "target person",
+          "rider": "target rider",
+          "traffic light": "the traffic light",
+          "truck": "visible truck"
+        },
+        "term_to_classes": {
+          "car": [
+            "car"
+          ],
+          "visible truck": [
+            "truck"
+          ],
+          "target person": [
+            "person"
+          ],
+          "target rider": [
+            "rider"
+          ],
+          "the traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "64064c71cf12",
+        "granularity": "standard",
+        "terms": [
+          "a car",
+          "target traffic light",
+          "the rider",
+          "truck instance",
+          "visible person"
+        ],
+        "class_to_term": {
+          "car": "a car",
+          "person": "visible person",
+          "rider": "the rider",
+          "traffic light": "target traffic light",
+          "truck": "truck instance"
+        },
+        "term_to_classes": {
+          "a car": [
+            "car"
+          ],
+          "truck instance": [
+            "truck"
+          ],
+          "visible person": [
+            "person"
+          ],
+          "the rider": [
+            "rider"
+          ],
+          "target traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "8ac34aee5ca6",
+        "granularity": "standard",
+        "terms": [
+          "a car",
+          "a traffic light",
+          "a truck",
+          "person instance",
+          "rider object"
+        ],
+        "class_to_term": {
+          "car": "a car",
+          "person": "person instance",
+          "rider": "rider object",
+          "traffic light": "a traffic light",
+          "truck": "a truck"
+        },
+        "term_to_classes": {
+          "a car": [
+            "car"
+          ],
+          "a truck": [
+            "truck"
+          ],
+          "person instance": [
+            "person"
+          ],
+          "rider object": [
+            "rider"
+          ],
+          "a traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "358cbe6de20b",
+        "granularity": "standard",
+        "terms": [
+          "a rider",
+          "a traffic light",
+          "a truck",
+          "car object",
+          "person instance"
+        ],
+        "class_to_term": {
+          "car": "car object",
+          "person": "person instance",
+          "rider": "a rider",
+          "traffic light": "a traffic light",
+          "truck": "a truck"
+        },
+        "term_to_classes": {
+          "car object": [
+            "car"
+          ],
+          "a truck": [
+            "truck"
+          ],
+          "person instance": [
+            "person"
+          ],
+          "a rider": [
+            "rider"
+          ],
+          "a traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "f79f2d6604ed",
+        "granularity": "standard",
+        "terms": [
+          "a car",
+          "target person",
+          "the truck",
+          "traffic light instance",
+          "visible rider"
+        ],
+        "class_to_term": {
+          "car": "a car",
+          "person": "target person",
+          "rider": "visible rider",
+          "traffic light": "traffic light instance",
+          "truck": "the truck"
+        },
+        "term_to_classes": {
+          "a car": [
+            "car"
+          ],
+          "the truck": [
+            "truck"
+          ],
+          "target person": [
+            "person"
+          ],
+          "visible rider": [
+            "rider"
+          ],
+          "traffic light instance": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "d3e2969a35fd",
+        "granularity": "standard",
+        "terms": [
+          "target traffic light",
+          "the car",
+          "truck instance",
+          "visible person",
+          "visible rider"
+        ],
+        "class_to_term": {
+          "car": "the car",
+          "person": "visible person",
+          "rider": "visible rider",
+          "traffic light": "target traffic light",
+          "truck": "truck instance"
+        },
+        "term_to_classes": {
+          "the car": [
+            "car"
+          ],
+          "truck instance": [
+            "truck"
+          ],
+          "visible person": [
+            "person"
+          ],
+          "visible rider": [
+            "rider"
+          ],
+          "target traffic light": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "coarse": [
+      {
+        "vocab_id": "b89220f73603",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "street vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "human",
+          "rider": "human",
+          "traffic light": "traffic control",
+          "truck": "street vehicle"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car",
+            "truck"
+          ],
+          "human": [
+            "person",
+            "rider"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "34774e738af0",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road control sign",
+          "road vehicle",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "rider": "human",
+          "traffic light": "road control sign",
+          "truck": "street vehicle"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "street vehicle": [
+            "truck"
+          ],
+          "human": [
+            "person",
+            "rider"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "b7ebae40e614",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "person group",
+          "road vehicle",
+          "street vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "person group",
+          "rider": "human",
+          "traffic light": "traffic control",
+          "truck": "road vehicle"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "road vehicle": [
+            "truck"
+          ],
+          "person group": [
+            "person"
+          ],
+          "human": [
+            "rider"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "b80fad14635d",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road control sign",
+          "road vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "rider": "human",
+          "traffic light": "road control sign",
+          "truck": "road vehicle"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car",
+            "truck"
+          ],
+          "human": [
+            "person",
+            "rider"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "4d7ee6fae11a",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "person group",
+          "road vehicle",
+          "street vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "rider": "person group",
+          "traffic light": "traffic control",
+          "truck": "street vehicle"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "street vehicle": [
+            "truck"
+          ],
+          "human": [
+            "person"
+          ],
+          "person group": [
+            "rider"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "bd237371f3f3",
+        "granularity": "coarse",
+        "terms": [
+          "person group",
+          "road control sign",
+          "road vehicle",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "person group",
+          "rider": "person group",
+          "traffic light": "road control sign",
+          "truck": "street vehicle"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "street vehicle": [
+            "truck"
+          ],
+          "person group": [
+            "person",
+            "rider"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "fine": [
+      {
+        "vocab_id": "88a50b52ee79",
+        "granularity": "fine",
+        "terms": [
+          "cargo truck",
+          "hatchback",
+          "motor rider",
+          "road signal light",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "hatchback",
+          "person": "standing person",
+          "rider": "motor rider",
+          "traffic light": "road signal light",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "hatchback": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "4bbc6ade0721",
+        "granularity": "fine",
+        "terms": [
+          "bike rider",
+          "cargo truck",
+          "road signal light",
+          "sedan",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "standing person",
+          "rider": "bike rider",
+          "traffic light": "road signal light",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "bike rider": [
+            "rider"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "0d202ebee3c7",
+        "granularity": "fine",
+        "terms": [
+          "cargo truck",
+          "motor rider",
+          "road car",
+          "road signal light",
+          "walking pedestrian"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "walking pedestrian",
+          "rider": "motor rider",
+          "traffic light": "road signal light",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "walking pedestrian": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "f5ad5a73ce48",
+        "granularity": "fine",
+        "terms": [
+          "bike rider",
+          "cargo truck",
+          "intersection traffic light",
+          "road car",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "standing person",
+          "rider": "bike rider",
+          "traffic light": "intersection traffic light",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "bike rider": [
+            "rider"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "3ec724496c17",
+        "granularity": "fine",
+        "terms": [
+          "adult person",
+          "cargo truck",
+          "motor rider",
+          "road signal light",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "adult person",
+          "rider": "motor rider",
+          "traffic light": "road signal light",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "b6eaf3646ace",
+        "granularity": "fine",
+        "terms": [
+          "heavy truck",
+          "motor rider",
+          "road car",
+          "road signal light",
+          "walking pedestrian"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "walking pedestrian",
+          "rider": "motor rider",
+          "traffic light": "road signal light",
+          "truck": "heavy truck"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "heavy truck": [
+            "truck"
+          ],
+          "walking pedestrian": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "vocab_id": "dd59b7531539",
+        "granularity": "mixed",
+        "terms": [
+          "heavy truck",
+          "human",
+          "road car",
+          "standing person",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "standing person",
+          "rider": "human",
+          "traffic light": "traffic control",
+          "truck": "heavy truck"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "heavy truck": [
+            "truck"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "human": [
+            "rider"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "36c973acf481",
+        "granularity": "mixed",
+        "terms": [
+          "intersection traffic light",
+          "motor rider",
+          "road vehicle",
+          "street vehicle",
+          "walking pedestrian"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "walking pedestrian",
+          "rider": "motor rider",
+          "traffic light": "intersection traffic light",
+          "truck": "road vehicle"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "road vehicle": [
+            "truck"
+          ],
+          "walking pedestrian": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "81f05b86a326",
+        "granularity": "mixed",
+        "terms": [
+          "adult person",
+          "hatchback",
+          "motor rider",
+          "road control sign",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "hatchback",
+          "person": "adult person",
+          "rider": "motor rider",
+          "traffic light": "road control sign",
+          "truck": "street vehicle"
+        },
+        "term_to_classes": {
+          "hatchback": [
+            "car"
+          ],
+          "street vehicle": [
+            "truck"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "699f7565023d",
+        "granularity": "mixed",
+        "terms": [
+          "cargo truck",
+          "human",
+          "motor rider",
+          "road control sign",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "human",
+          "rider": "motor rider",
+          "traffic light": "road control sign",
+          "truck": "cargo truck"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "cargo truck": [
+            "truck"
+          ],
+          "human": [
+            "person"
+          ],
+          "motor rider": [
+            "rider"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "e7e68713528e",
+        "granularity": "mixed",
+        "terms": [
+          "adult person",
+          "human",
+          "pickup truck",
+          "road car",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "adult person",
+          "rider": "human",
+          "traffic light": "traffic control",
+          "truck": "pickup truck"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "pickup truck": [
+            "truck"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "human": [
+            "rider"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "42d4024467d3",
+        "granularity": "mixed",
+        "terms": [
+          "bike rider",
+          "intersection traffic light",
+          "road vehicle",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "standing person",
+          "rider": "bike rider",
+          "traffic light": "intersection traffic light",
+          "truck": "road vehicle"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car",
+            "truck"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "bike rider": [
+            "rider"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "counterfactual": [
+      {
+        "vocab_id": "c514a1b5fc98",
+        "granularity": "counterfactual",
+        "terms": [
+          "blurry person",
+          "blurry truck",
+          "camera flare",
+          "distant car",
+          "occluded traffic light",
+          "tiny rider",
+          "window reflection"
+        ],
+        "class_to_term": {
+          "car": "distant car",
+          "person": "blurry person",
+          "rider": "tiny rider",
+          "traffic light": "occluded traffic light",
+          "truck": "blurry truck"
+        },
+        "term_to_classes": {
+          "distant car": [
+            "car"
+          ],
+          "blurry truck": [
+            "truck"
+          ],
+          "blurry person": [
+            "person"
+          ],
+          "tiny rider": [
+            "rider"
+          ],
+          "occluded traffic light": [
+            "traffic light"
+          ],
+          "camera flare": [],
+          "window reflection": []
+        }
+      },
+      {
+        "vocab_id": "62bb72cf3cdb",
+        "granularity": "counterfactual",
+        "terms": [
+          "background texture",
+          "distant car",
+          "distant traffic light",
+          "partial truck",
+          "road marking",
+          "side-view person",
+          "tiny rider"
+        ],
+        "class_to_term": {
+          "car": "distant car",
+          "person": "side-view person",
+          "rider": "tiny rider",
+          "traffic light": "distant traffic light",
+          "truck": "partial truck"
+        },
+        "term_to_classes": {
+          "distant car": [
+            "car"
+          ],
+          "partial truck": [
+            "truck"
+          ],
+          "side-view person": [
+            "person"
+          ],
+          "tiny rider": [
+            "rider"
+          ],
+          "distant traffic light": [
+            "traffic light"
+          ],
+          "background texture": [],
+          "road marking": []
+        }
+      },
+      {
+        "vocab_id": "0f928b030b4a",
+        "granularity": "counterfactual",
+        "terms": [
+          "glass glare",
+          "partial rider",
+          "side-view person",
+          "side-view traffic light",
+          "side-view truck",
+          "tiny car",
+          "tree canopy"
+        ],
+        "class_to_term": {
+          "car": "tiny car",
+          "person": "side-view person",
+          "rider": "partial rider",
+          "traffic light": "side-view traffic light",
+          "truck": "side-view truck"
+        },
+        "term_to_classes": {
+          "tiny car": [
+            "car"
+          ],
+          "side-view truck": [
+            "truck"
+          ],
+          "side-view person": [
+            "person"
+          ],
+          "partial rider": [
+            "rider"
+          ],
+          "side-view traffic light": [
+            "traffic light"
+          ],
+          "glass glare": [],
+          "tree canopy": []
+        }
+      }
+    ]
+  }
+}

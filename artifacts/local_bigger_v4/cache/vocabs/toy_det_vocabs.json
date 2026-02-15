@@ -1,0 +1,615 @@
+{
+  "dataset": "toy_det",
+  "seed": 20260215,
+  "lists_per_granularity": 6,
+  "granularities": {
+    "standard": [
+      {
+        "vocab_id": "4d7a6bafc989",
+        "granularity": "standard",
+        "terms": [
+          "car",
+          "target traffic light",
+          "visible person"
+        ],
+        "class_to_term": {
+          "car": "car",
+          "person": "visible person",
+          "traffic light": "target traffic light"
+        },
+        "term_to_classes": {
+          "car": [
+            "car"
+          ],
+          "visible person": [
+            "person"
+          ],
+          "target traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "ff2833e7c242",
+        "granularity": "standard",
+        "terms": [
+          "a traffic light",
+          "target car",
+          "the person"
+        ],
+        "class_to_term": {
+          "car": "target car",
+          "person": "the person",
+          "traffic light": "a traffic light"
+        },
+        "term_to_classes": {
+          "target car": [
+            "car"
+          ],
+          "the person": [
+            "person"
+          ],
+          "a traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "cb0fc817f65f",
+        "granularity": "standard",
+        "terms": [
+          "car instance",
+          "the traffic light",
+          "visible person"
+        ],
+        "class_to_term": {
+          "car": "car instance",
+          "person": "visible person",
+          "traffic light": "the traffic light"
+        },
+        "term_to_classes": {
+          "car instance": [
+            "car"
+          ],
+          "visible person": [
+            "person"
+          ],
+          "the traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "b6aaf4f690a6",
+        "granularity": "standard",
+        "terms": [
+          "a person",
+          "a traffic light",
+          "target car"
+        ],
+        "class_to_term": {
+          "car": "target car",
+          "person": "a person",
+          "traffic light": "a traffic light"
+        },
+        "term_to_classes": {
+          "target car": [
+            "car"
+          ],
+          "a person": [
+            "person"
+          ],
+          "a traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "a99f9fed4111",
+        "granularity": "standard",
+        "terms": [
+          "a traffic light",
+          "car instance",
+          "person object"
+        ],
+        "class_to_term": {
+          "car": "car instance",
+          "person": "person object",
+          "traffic light": "a traffic light"
+        },
+        "term_to_classes": {
+          "car instance": [
+            "car"
+          ],
+          "person object": [
+            "person"
+          ],
+          "a traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "d4875f870eb4",
+        "granularity": "standard",
+        "terms": [
+          "a person",
+          "car object",
+          "traffic light instance"
+        ],
+        "class_to_term": {
+          "car": "car object",
+          "person": "a person",
+          "traffic light": "traffic light instance"
+        },
+        "term_to_classes": {
+          "car object": [
+            "car"
+          ],
+          "a person": [
+            "person"
+          ],
+          "traffic light instance": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "coarse": [
+      {
+        "vocab_id": "627e9160820b",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "traffic light": "traffic control"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "015f942ebaa4",
+        "granularity": "coarse",
+        "terms": [
+          "person group",
+          "road control sign",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "person group",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "person group": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "72302dfd90d4",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "street vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "human",
+          "traffic light": "traffic control"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "1dff153c87c3",
+        "granularity": "coarse",
+        "terms": [
+          "human",
+          "road control sign",
+          "road vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "human",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "0fc72fe0581d",
+        "granularity": "coarse",
+        "terms": [
+          "person group",
+          "road vehicle",
+          "traffic control"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "person group",
+          "traffic light": "traffic control"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "person group": [
+            "person"
+          ],
+          "traffic control": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "dc98c3deb768",
+        "granularity": "coarse",
+        "terms": [
+          "person group",
+          "road control sign",
+          "road vehicle"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "person group",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "person group": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "fine": [
+      {
+        "vocab_id": "ee9ac38a8759",
+        "granularity": "fine",
+        "terms": [
+          "intersection traffic light",
+          "sedan",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "standing person",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "4378717635e1",
+        "granularity": "fine",
+        "terms": [
+          "road signal light",
+          "sedan",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "standing person",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "14e2bfec98a1",
+        "granularity": "fine",
+        "terms": [
+          "intersection traffic light",
+          "road car",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "standing person",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "80a9718ced4a",
+        "granularity": "fine",
+        "terms": [
+          "road signal light",
+          "sedan",
+          "walking pedestrian"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "walking pedestrian",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "walking pedestrian": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "f33b0055e494",
+        "granularity": "fine",
+        "terms": [
+          "adult person",
+          "intersection traffic light",
+          "road car"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "adult person",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "e59062993621",
+        "granularity": "fine",
+        "terms": [
+          "adult person",
+          "road signal light",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "adult person",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "vocab_id": "0543f0e26ca1",
+        "granularity": "mixed",
+        "terms": [
+          "human",
+          "road signal light",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "human",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "0ad460c39c68",
+        "granularity": "mixed",
+        "terms": [
+          "adult person",
+          "hatchback",
+          "road control sign"
+        ],
+        "class_to_term": {
+          "car": "hatchback",
+          "person": "adult person",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "hatchback": [
+            "car"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "dc8760bde80b",
+        "granularity": "mixed",
+        "terms": [
+          "human",
+          "intersection traffic light",
+          "road car"
+        ],
+        "class_to_term": {
+          "car": "road car",
+          "person": "human",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "road car": [
+            "car"
+          ],
+          "human": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "cc1734c20a35",
+        "granularity": "mixed",
+        "terms": [
+          "adult person",
+          "road control sign",
+          "sedan"
+        ],
+        "class_to_term": {
+          "car": "sedan",
+          "person": "adult person",
+          "traffic light": "road control sign"
+        },
+        "term_to_classes": {
+          "sedan": [
+            "car"
+          ],
+          "adult person": [
+            "person"
+          ],
+          "road control sign": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "57a92d78d9ce",
+        "granularity": "mixed",
+        "terms": [
+          "road signal light",
+          "road vehicle",
+          "standing person"
+        ],
+        "class_to_term": {
+          "car": "road vehicle",
+          "person": "standing person",
+          "traffic light": "road signal light"
+        },
+        "term_to_classes": {
+          "road vehicle": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "road signal light": [
+            "traffic light"
+          ]
+        }
+      },
+      {
+        "vocab_id": "15dc1ad69bc7",
+        "granularity": "mixed",
+        "terms": [
+          "intersection traffic light",
+          "standing person",
+          "street vehicle"
+        ],
+        "class_to_term": {
+          "car": "street vehicle",
+          "person": "standing person",
+          "traffic light": "intersection traffic light"
+        },
+        "term_to_classes": {
+          "street vehicle": [
+            "car"
+          ],
+          "standing person": [
+            "person"
+          ],
+          "intersection traffic light": [
+            "traffic light"
+          ]
+        }
+      }
+    ]
+  }
+}

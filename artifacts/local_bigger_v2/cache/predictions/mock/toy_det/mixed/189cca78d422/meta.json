@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "189cca78d422",
+    "terms": [
+      "adult person",
+      "intersection traffic light",
+      "street vehicle"
+    ],
+    "class_to_term": {
+      "car": "street vehicle",
+      "person": "adult person",
+      "traffic light": "intersection traffic light"
+    },
+    "term_to_classes": {
+      "street vehicle": [
+        "car"
+      ],
+      "adult person": [
+        "person"
+      ],
+      "intersection traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.1149530410766602,
+    "images_per_sec": 287.00760320003286
+  },
+  "merged_file": "artifacts/local_bigger_v2/cache/predictions/mock/toy_det/mixed/189cca78d422/merged.jsonl.gz"
+}

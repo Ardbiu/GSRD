@@ -1,0 +1,48 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "coarse",
+  "vocab": {
+    "vocab_id": "bd237371f3f3",
+    "terms": [
+      "person group",
+      "road control sign",
+      "road vehicle",
+      "street vehicle"
+    ],
+    "class_to_term": {
+      "car": "road vehicle",
+      "person": "person group",
+      "rider": "person group",
+      "traffic light": "road control sign",
+      "truck": "street vehicle"
+    },
+    "term_to_classes": {
+      "road vehicle": [
+        "car"
+      ],
+      "street vehicle": [
+        "truck"
+      ],
+      "person group": [
+        "person",
+        "rider"
+      ],
+      "road control sign": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.8895869255065918,
+    "images_per_sec": 169.34918191932826
+  },
+  "merged_file": "artifacts/local_bigger_v8/cache/predictions/mock/toy_det/coarse/bd237371f3f3/merged.jsonl.gz"
+}

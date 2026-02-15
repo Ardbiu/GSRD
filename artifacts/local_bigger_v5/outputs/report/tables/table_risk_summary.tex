@@ -1,0 +1,51 @@
+\begin{tabular}{llllrlrrrrrrr}
+\toprule
+detector & dataset & granularity & strategy & alpha & ucb_method & delta & mean_test_risk & mean_test_coverage & target_met_rate & mean_guarantee_margin & worst_group_target_met_rate & worst_group_test_risk \\
+\midrule
+mock & toy_det & coarse & flat & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & coarse & flat & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & coarse & flat & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & coarse & groupwise & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 & 1.0000 & 0.0000 \\
+mock & toy_det & coarse & groupwise & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0650 & 1.0000 & 0.0000 \\
+mock & toy_det & coarse & groupwise & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1650 & 1.0000 & 0.0000 \\
+mock & toy_det & coarse & hierarchy & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & coarse & hierarchy & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & coarse & hierarchy & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & counterfactual & flat & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & counterfactual & flat & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & counterfactual & flat & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & counterfactual & groupwise & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 & 1.0000 & 0.0000 \\
+mock & toy_det & counterfactual & groupwise & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0650 & 1.0000 & 0.0000 \\
+mock & toy_det & counterfactual & groupwise & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1650 & 1.0000 & 0.0000 \\
+mock & toy_det & counterfactual & hierarchy & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & counterfactual & hierarchy & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & counterfactual & hierarchy & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & fine & flat & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & fine & flat & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & fine & flat & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & fine & groupwise & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 & 1.0000 & 0.0000 \\
+mock & toy_det & fine & groupwise & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0650 & 1.0000 & 0.0000 \\
+mock & toy_det & fine & groupwise & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1650 & 1.0000 & 0.0000 \\
+mock & toy_det & fine & hierarchy & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & fine & hierarchy & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & fine & hierarchy & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & mixed & flat & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & mixed & flat & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & mixed & flat & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & mixed & groupwise & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 & 1.0000 & 0.0000 \\
+mock & toy_det & mixed & groupwise & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0650 & 1.0000 & 0.0000 \\
+mock & toy_det & mixed & groupwise & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1650 & 1.0000 & 0.0000 \\
+mock & toy_det & mixed & hierarchy & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & mixed & hierarchy & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & mixed & hierarchy & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & standard & flat & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & standard & flat & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & standard & flat & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+mock & toy_det & standard & groupwise & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 & 1.0000 & 0.0000 \\
+mock & toy_det & standard & groupwise & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0650 & 1.0000 & 0.0000 \\
+mock & toy_det & standard & groupwise & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1650 & 1.0000 & 0.0000 \\
+mock & toy_det & standard & hierarchy & 0.0500 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0376 & NaN & NaN \\
+mock & toy_det & standard & hierarchy & 0.1000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0876 & NaN & NaN \\
+mock & toy_det & standard & hierarchy & 0.2000 & clopper_pearson & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.1876 & NaN & NaN \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,2 @@
+detector,dataset,worst_case_drop_mAP
+mock,toy_det,0.0

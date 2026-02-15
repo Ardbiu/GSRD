@@ -1,0 +1,11 @@
+\begin{tabular}{lllrrrrrl}
+\toprule
+detector & dataset & granularity & mAP_mean & mAP_ci95_low & mAP_ci95_high & drop_from_standard_mAP & robustness_to_standard & mAP_95ci \\
+\midrule
+mock & toy_det & coarse & 0.177841 & 0.110135 & 0.245547 & 0.315745 & 0.360304 & 0.1778 [0.1101, 0.2455] \\
+mock & toy_det & counterfactual & 0.494604 & 0.493732 & 0.495475 & -0.001018 & 1.002063 & 0.4946 [0.4937, 0.4955] \\
+mock & toy_det & fine & 0.496078 & 0.494998 & 0.497159 & -0.002493 & 1.005050 & 0.4961 [0.4950, 0.4972] \\
+mock & toy_det & mixed & 0.420094 & 0.368387 & 0.471800 & 0.073492 & 0.851106 & 0.4201 [0.3684, 0.4718] \\
+mock & toy_det & standard & 0.493585 & 0.493049 & 0.494122 & 0.000000 & 1.000000 & 0.4936 [0.4930, 0.4941] \\
+\bottomrule
+\end{tabular}

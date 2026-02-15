@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "mixed",
+  "vocab": {
+    "vocab_id": "0ad460c39c68",
+    "terms": [
+      "adult person",
+      "hatchback",
+      "road control sign"
+    ],
+    "class_to_term": {
+      "car": "hatchback",
+      "person": "adult person",
+      "traffic light": "road control sign"
+    },
+    "term_to_classes": {
+      "hatchback": [
+        "car"
+      ],
+      "adult person": [
+        "person"
+      ],
+      "road control sign": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8655469417572021,
+    "images_per_sec": 369.7084289274335
+  },
+  "merged_file": "artifacts/local_bigger_v4/cache/predictions/mock/toy_det/mixed/0ad460c39c68/merged.jsonl.gz"
+}

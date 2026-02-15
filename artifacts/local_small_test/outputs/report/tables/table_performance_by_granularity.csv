@@ -1,0 +1,5 @@
+detector,dataset,granularity,mAP_mean,mAP_std,drop_from_standard_mAP
+mock,toy_det,coarse,0.0,0.0,0.0
+mock,toy_det,fine,0.0,0.0,0.0
+mock,toy_det,mixed,3.4378437843784377e-05,4.861845305188033e-05,-3.4378437843784377e-05
+mock,toy_det,standard,0.0,0.0,0.0

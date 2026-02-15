@@ -1,0 +1,51 @@
+\begin{tabular}{llllrrrrr}
+\toprule
+detector & dataset & granularity & strategy & alpha & achieved_risk & achieved_coverage & target_met_rate & calib_margin \\
+\midrule
+mock & toy_det & coarse & flat & 0.0500 & 1.0000 & 0.0000 & 0.0000 & -0.9500 \\
+mock & toy_det & counterfactual & flat & 0.0500 & 0.0169 & 0.9336 & 1.0000 & 0.0106 \\
+mock & toy_det & fine & flat & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0413 \\
+mock & toy_det & mixed & flat & 0.0500 & 0.0122 & 0.8680 & 0.8333 & 0.0291 \\
+mock & toy_det & standard & flat & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0413 \\
+mock & toy_det & coarse & flat & 0.1000 & 1.0000 & 0.0000 & 0.0000 & -0.9000 \\
+mock & toy_det & counterfactual & flat & 0.1000 & 0.0642 & 0.9808 & 1.0000 & 0.0095 \\
+mock & toy_det & fine & flat & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0913 \\
+mock & toy_det & mixed & flat & 0.1000 & 0.0275 & 0.8961 & 1.0000 & 0.0651 \\
+mock & toy_det & standard & flat & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0913 \\
+mock & toy_det & coarse & flat & 0.2000 & 1.0000 & 0.0000 & 0.0000 & -0.8000 \\
+mock & toy_det & counterfactual & flat & 0.2000 & 0.0822 & 1.0000 & 1.0000 & 0.0851 \\
+mock & toy_det & fine & flat & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1913 \\
+mock & toy_det & mixed & flat & 0.2000 & 0.0575 & 0.9432 & 1.0000 & 0.1278 \\
+mock & toy_det & standard & flat & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1913 \\
+mock & toy_det & coarse & groupwise & 0.0500 & 0.6667 & 0.3333 & 0.3333 & -0.6300 \\
+mock & toy_det & counterfactual & groupwise & 0.0500 & 0.0044 & 0.9190 & 1.0000 & 0.0103 \\
+mock & toy_det & fine & groupwise & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 \\
+mock & toy_det & mixed & groupwise & 0.0500 & 0.3333 & 0.6667 & 0.6667 & -0.3087 \\
+mock & toy_det & standard & groupwise & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0150 \\
+mock & toy_det & coarse & groupwise & 0.1000 & 0.6667 & 0.3333 & 0.3333 & -0.5800 \\
+mock & toy_det & counterfactual & groupwise & 0.1000 & 0.0308 & 0.9470 & 1.0000 & 0.0260 \\
+mock & toy_det & fine & groupwise & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0650 \\
+mock & toy_det & mixed & groupwise & 0.1000 & 0.0114 & 0.9663 & 1.0000 & 0.0503 \\
+mock & toy_det & standard & groupwise & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0650 \\
+mock & toy_det & coarse & groupwise & 0.2000 & 0.6667 & 0.3333 & 0.3333 & -0.4800 \\
+mock & toy_det & counterfactual & groupwise & 0.2000 & 0.0703 & 0.9873 & 1.0000 & 0.0496 \\
+mock & toy_det & fine & groupwise & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1650 \\
+mock & toy_det & mixed & groupwise & 0.2000 & 0.0215 & 0.9804 & 1.0000 & 0.1361 \\
+mock & toy_det & standard & groupwise & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1650 \\
+mock & toy_det & coarse & hierarchy & 0.0500 & 0.6667 & 0.3333 & 0.3333 & -0.6201 \\
+mock & toy_det & counterfactual & hierarchy & 0.0500 & 0.0169 & 0.9336 & 1.0000 & 0.0106 \\
+mock & toy_det & fine & hierarchy & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0413 \\
+mock & toy_det & mixed & hierarchy & 0.0500 & 0.0096 & 0.9636 & 0.8333 & 0.0345 \\
+mock & toy_det & standard & hierarchy & 0.0500 & 0.0000 & 1.0000 & 1.0000 & 0.0413 \\
+mock & toy_det & coarse & hierarchy & 0.1000 & 0.6667 & 0.3333 & 0.3333 & -0.5701 \\
+mock & toy_det & counterfactual & hierarchy & 0.1000 & 0.0642 & 0.9808 & 1.0000 & 0.0095 \\
+mock & toy_det & fine & hierarchy & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0913 \\
+mock & toy_det & mixed & hierarchy & 0.1000 & 0.0140 & 0.9698 & 1.0000 & 0.0777 \\
+mock & toy_det & standard & hierarchy & 0.1000 & 0.0000 & 1.0000 & 1.0000 & 0.0913 \\
+mock & toy_det & coarse & hierarchy & 0.2000 & 0.6667 & 0.3333 & 0.3333 & -0.4701 \\
+mock & toy_det & counterfactual & hierarchy & 0.2000 & 0.0822 & 1.0000 & 1.0000 & 0.0851 \\
+mock & toy_det & fine & hierarchy & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1913 \\
+mock & toy_det & mixed & hierarchy & 0.2000 & 0.0272 & 0.9867 & 1.0000 & 0.1596 \\
+mock & toy_det & standard & hierarchy & 0.2000 & 0.0000 & 1.0000 & 1.0000 & 0.1913 \\
+\bottomrule
+\end{tabular}

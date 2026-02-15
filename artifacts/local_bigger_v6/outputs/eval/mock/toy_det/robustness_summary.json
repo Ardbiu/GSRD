@@ -1,0 +1,10 @@
+[
+  {
+    "detector": "mock",
+    "dataset": "toy_det",
+    "worst_case_drop_mAP": 0.31574455632672316,
+    "mean_drop_mAP": 0.07714506241185255,
+    "granularity_variance_mAP": 0.015069224869575468,
+    "robustness_to_standard_min": 0.36030404109640535
+  }
+]

@@ -1,0 +1,1 @@
+detector,granularity,mAP_id,mAP_ood,absolute_drop,absolute_drop_ci95_low,absolute_drop_ci95_high,relative_drop_pct,interaction_vs_standard

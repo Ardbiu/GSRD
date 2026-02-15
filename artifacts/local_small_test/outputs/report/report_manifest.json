@@ -1,0 +1,26 @@
+{
+  "summary_markdown": "artifacts/local_small_test/outputs/report/final_report.md",
+  "figures": {
+    "granularity_fig": "artifacts/local_small_test/outputs/report/figures/granularity_sensitivity.png",
+    "risk_fig": "artifacts/local_small_test/outputs/report/figures/risk_vs_coverage.png"
+  },
+  "tables": {
+    "performance_csv": "artifacts/local_small_test/outputs/report/tables/table_performance_by_granularity.csv",
+    "performance_tex": "artifacts/local_small_test/outputs/report/tables/table_performance_by_granularity.tex",
+    "worst_drop_csv": "artifacts/local_small_test/outputs/report/tables/table_worst_case_drop.csv",
+    "worst_drop_tex": "artifacts/local_small_test/outputs/report/tables/table_worst_case_drop.tex",
+    "calib_csv": "artifacts/local_small_test/outputs/report/tables/table_calibration_effectiveness.csv",
+    "calib_tex": "artifacts/local_small_test/outputs/report/tables/table_calibration_effectiveness.tex"
+  },
+  "headline_numbers": {
+    "best_map": {
+      "detector": "mock",
+      "dataset": "toy_det",
+      "granularity": "mixed",
+      "mAP_mean": 3.4378437843784377e-05
+    },
+    "mean_worst_case_drop": 0.0,
+    "risk_control_success_rate": 0.0,
+    "mean_coverage": 0.0
+  }
+}

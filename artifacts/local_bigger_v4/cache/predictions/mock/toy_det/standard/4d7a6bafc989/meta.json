@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "standard",
+  "vocab": {
+    "vocab_id": "4d7a6bafc989",
+    "terms": [
+      "car",
+      "target traffic light",
+      "visible person"
+    ],
+    "class_to_term": {
+      "car": "car",
+      "person": "visible person",
+      "traffic light": "target traffic light"
+    },
+    "term_to_classes": {
+      "car": [
+        "car"
+      ],
+      "visible person": [
+        "person"
+      ],
+      "target traffic light": [
+        "traffic light"
+      ]
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 0.8187949657440186,
+    "images_per_sec": 390.81823092210146
+  },
+  "merged_file": "artifacts/local_bigger_v4/cache/predictions/mock/toy_det/standard/4d7a6bafc989/merged.jsonl.gz"
+}

@@ -1,0 +1,55 @@
+{
+  "format_version": "1.0.0",
+  "detector": {
+    "name": "mock",
+    "version": "mock-v1"
+  },
+  "dataset": "toy_det",
+  "granularity": "counterfactual",
+  "vocab": {
+    "vocab_id": "62bb72cf3cdb",
+    "terms": [
+      "background texture",
+      "distant car",
+      "distant traffic light",
+      "partial truck",
+      "road marking",
+      "side-view person",
+      "tiny rider"
+    ],
+    "class_to_term": {
+      "car": "distant car",
+      "person": "side-view person",
+      "rider": "tiny rider",
+      "traffic light": "distant traffic light",
+      "truck": "partial truck"
+    },
+    "term_to_classes": {
+      "distant car": [
+        "car"
+      ],
+      "partial truck": [
+        "truck"
+      ],
+      "side-view person": [
+        "person"
+      ],
+      "tiny rider": [
+        "rider"
+      ],
+      "distant traffic light": [
+        "traffic light"
+      ],
+      "background texture": [],
+      "road marking": []
+    }
+  },
+  "num_shards": 1,
+  "shard_stats": {
+    "shard_index": 0,
+    "num_images": 320,
+    "runtime_sec": 1.9542253017425537,
+    "images_per_sec": 163.74775196834304
+  },
+  "merged_file": "artifacts/local_bigger_v6/cache/predictions/mock/toy_det/counterfactual/62bb72cf3cdb/merged.jsonl.gz"
+}

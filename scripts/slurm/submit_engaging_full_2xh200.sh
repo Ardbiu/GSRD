@@ -28,6 +28,9 @@ echo "  repo: ${REPO_ROOT}"
 echo "  config: ${CONFIG}"
 echo "  detector: ${DETECTOR}"
 echo "  conda env: ${CONDA_ENV_NAME}"
+if [[ -n "${VENV_PATH:-}" ]]; then
+  echo "  venv path: ${VENV_PATH}"
+fi
 echo "  datasets: ${DATASETS}"
 echo "  gpu partition: ${GPU_PARTITION}"
 echo "  cpu partition: ${CPU_PARTITION}"

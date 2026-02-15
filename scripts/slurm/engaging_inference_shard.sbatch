@@ -24,12 +24,38 @@ fi
 
 cd "$REPO_ROOT"
 
-module purge
-module load deprecated-modules
-module load anaconda3/2022.05-x86_64
+bootstrap_env() {
+  unset PYTHONPATH
+  unset PYTHONHOME
+  export PYTHONNOUSERSITE=1
 
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "$CONDA_ENV_NAME"
+  if [[ -n "${VENV_PATH:-}" && -f "${VENV_PATH}/bin/activate" ]]; then
+    module purge
+    module load deprecated-modules
+    module load python/3.10.8-x86_64
+    source "${VENV_PATH}/bin/activate"
+    return 0
+  fi
+
+  module purge
+  module load deprecated-modules
+  module load anaconda3/2022.05-x86_64
+  if command -v conda >/dev/null 2>&1; then
+    local conda_exe conda_base
+    conda_exe="$(command -v conda)"
+    conda_base="$(dirname "$(dirname "$(readlink -f "${conda_exe}")")")"
+    if [[ -f "${conda_base}/etc/profile.d/conda.sh" ]]; then
+      source "${conda_base}/etc/profile.d/conda.sh"
+      conda activate "${CONDA_ENV_NAME}"
+      return 0
+    fi
+  fi
+
+  echo "ERROR: Failed to activate environment. Set VENV_PATH or fix conda env ${CONDA_ENV_NAME}." >&2
+  return 2
+}
+
+bootstrap_env
 
 export PYTHONPATH="$REPO_ROOT/src:${PYTHONPATH:-}"
 DATASET_ARGS=()

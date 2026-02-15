@@ -175,6 +175,23 @@ cd /path/to/GSRD
 bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
 ```
 
+If your conda setup is unstable on login nodes, use a Python venv and pass `VENV_PATH`:
+
+```bash
+module purge
+module load deprecated-modules
+module load python/3.10.8-x86_64
+python -m venv ~/.venvs/gsrd
+source ~/.venvs/gsrd/bin/activate
+python -m pip install -U pip setuptools wheel
+python -m pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision
+python -m pip install -e .
+
+VENV_PATH=$HOME/.venvs/gsrd \
+CPU_PARTITION=mit_normal GPU_PARTITION=mit_normal_gpu GPU_TYPE=h200 NUM_SHARDS=2 \
+bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
+```
+
 Optional (add OOD BDD100K in the same chain):
 
 ```bash

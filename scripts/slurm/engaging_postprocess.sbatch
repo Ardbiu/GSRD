@@ -37,11 +37,17 @@ bootstrap_env() {
   unset PYTHONHOME
   export PYTHONNOUSERSITE=1
 
-  if [[ -n "${VENV_PATH:-}" && -f "${VENV_PATH}/bin/activate" ]]; then
+  local inferred_venv="/orcd/scratch/${USER}/gsrd/venv"
+  local active_venv="${VENV_PATH:-}"
+  if [[ -z "${active_venv}" && -f "${inferred_venv}/bin/activate" ]]; then
+    active_venv="${inferred_venv}"
+  fi
+
+  if [[ -n "${active_venv}" && -f "${active_venv}/bin/activate" ]]; then
     module purge
     module load deprecated-modules
     module load python/3.10.8-x86_64
-    source "${VENV_PATH}/bin/activate"
+    source "${active_venv}/bin/activate"
     return 0
   fi
 
@@ -59,7 +65,7 @@ bootstrap_env() {
     fi
   fi
 
-  echo "ERROR: Failed to activate environment. Set VENV_PATH or fix conda env ${CONDA_ENV_NAME}." >&2
+  echo "ERROR: Failed to activate environment. Tried VENV_PATH='${VENV_PATH:-}' and '${inferred_venv}', then conda env '${CONDA_ENV_NAME}'." >&2
   return 2
 }
 

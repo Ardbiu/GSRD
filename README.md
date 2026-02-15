@@ -153,6 +153,25 @@ sbatch scripts/slurm/merge_and_eval.sbatch configs/engaging_cluster.yaml coco_va
 sbatch scripts/slurm/merge_and_eval.sbatch configs/engaging_cluster.yaml bdd100k_val grounding_dino
 ```
 
+### Turnkey Full Run On 2x H200
+
+The script below submits a chained 3-job workflow:
+1. `data+vocab` prep on CPU partition,
+2. inference as a 2-task array (`array=0-1`) on `mit_normal_gpu` with one `h200` per task,
+3. `merge+eval+risk+report` on CPU partition.
+
+```bash
+cd /path/to/GSRD
+bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_cluster.yaml grounding_dino gsrd
+```
+
+If your CPU partition name differs, override it at submit time:
+
+```bash
+CPU_PARTITION=mit_normal GPU_PARTITION=mit_normal_gpu GPU_TYPE=h200 \
+bash scripts/slurm/submit_engaging_full_2xh200.sh
+```
+
 ## Reproducibility and Resume Behavior
 
 - Inference writes shard artifacts under `artifacts/cache/predictions/...`.

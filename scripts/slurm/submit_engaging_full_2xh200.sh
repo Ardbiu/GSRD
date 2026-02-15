@@ -13,6 +13,9 @@ GPU_PARTITION=${GPU_PARTITION:-mit_normal_gpu}
 CPU_PARTITION=${CPU_PARTITION:-mit_normal}
 GPU_TYPE=${GPU_TYPE:-h200}
 NUM_SHARDS=${NUM_SHARDS:-2}
+PREP_TIME=${PREP_TIME:-08:00:00}
+INF_TIME=${INF_TIME:-05:00:00}
+POST_TIME=${POST_TIME:-10:00:00}
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
@@ -36,10 +39,14 @@ echo "  gpu partition: ${GPU_PARTITION}"
 echo "  cpu partition: ${CPU_PARTITION}"
 echo "  gpu type: ${GPU_TYPE}"
 echo "  shards: ${NUM_SHARDS}"
+echo "  prep time: ${PREP_TIME}"
+echo "  inference time: ${INF_TIME}"
+echo "  post time: ${POST_TIME}"
 
 PREP_JOB_ID=$(
   sbatch --parsable \
     --partition="${CPU_PARTITION}" \
+    --time="${PREP_TIME}" \
     --chdir="${REPO_ROOT}" \
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \
@@ -51,6 +58,7 @@ INF_JOB_ID=$(
   sbatch --parsable \
     --dependency="afterok:${PREP_JOB_ID}" \
     --partition="${GPU_PARTITION}" \
+    --time="${INF_TIME}" \
     --array="0-$((NUM_SHARDS - 1))" \
     -G "${GPU_TYPE}:1" \
     --chdir="${REPO_ROOT}" \
@@ -64,6 +72,7 @@ POST_JOB_ID=$(
   sbatch --parsable \
     --dependency="afterok:${INF_JOB_ID}" \
     --partition="${CPU_PARTITION}" \
+    --time="${POST_TIME}" \
     --chdir="${REPO_ROOT}" \
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \

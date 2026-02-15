@@ -192,6 +192,13 @@ CPU_PARTITION=mit_normal GPU_PARTITION=mit_normal_gpu GPU_TYPE=h200 NUM_SHARDS=2
 bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
 ```
 
+If your cluster has strict walltime caps, override stage times at submit:
+
+```bash
+PREP_TIME=04:00:00 INF_TIME=05:00:00 POST_TIME=04:00:00 \
+bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
+```
+
 Optional (add OOD BDD100K in the same chain):
 
 ```bash

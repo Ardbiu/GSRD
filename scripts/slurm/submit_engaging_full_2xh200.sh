@@ -17,6 +17,13 @@ PREP_TIME=${PREP_TIME:-08:00:00}
 INF_TIME=${INF_TIME:-05:00:00}
 POST_TIME=${POST_TIME:-10:00:00}
 
+SBATCH_EXPORT="ALL"
+for env_var in VENV_PATH HF_HOME TRANSFORMERS_CACHE HUGGINGFACE_HUB_CACHE PIP_CACHE_DIR TMPDIR; do
+  if [[ -n "${!env_var:-}" ]]; then
+    SBATCH_EXPORT="${SBATCH_EXPORT},${env_var}=${!env_var}"
+  fi
+done
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 SLURM_LOG_DIR="${SLURM_LOG_DIR:-${REPO_ROOT}/artifacts/slurm_logs}"
@@ -42,11 +49,13 @@ echo "  shards: ${NUM_SHARDS}"
 echo "  prep time: ${PREP_TIME}"
 echo "  inference time: ${INF_TIME}"
 echo "  post time: ${POST_TIME}"
+echo "  sbatch export: ${SBATCH_EXPORT}"
 
 PREP_JOB_ID=$(
   sbatch --parsable \
     --partition="${CPU_PARTITION}" \
     --time="${PREP_TIME}" \
+    --export="${SBATCH_EXPORT}" \
     --chdir="${REPO_ROOT}" \
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \
@@ -57,8 +66,10 @@ PREP_JOB_ID=$(
 INF_JOB_ID=$(
   sbatch --parsable \
     --dependency="afterok:${PREP_JOB_ID}" \
+    --kill-on-invalid-dep=yes \
     --partition="${GPU_PARTITION}" \
     --time="${INF_TIME}" \
+    --export="${SBATCH_EXPORT}" \
     --array="0-$((NUM_SHARDS - 1))" \
     -G "${GPU_TYPE}:1" \
     --chdir="${REPO_ROOT}" \
@@ -71,8 +82,10 @@ INF_JOB_ID=$(
 POST_JOB_ID=$(
   sbatch --parsable \
     --dependency="afterok:${INF_JOB_ID}" \
+    --kill-on-invalid-dep=yes \
     --partition="${CPU_PARTITION}" \
     --time="${POST_TIME}" \
+    --export="${SBATCH_EXPORT}" \
     --chdir="${REPO_ROOT}" \
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \

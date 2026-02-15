@@ -199,6 +199,8 @@ PREP_TIME=04:00:00 INF_TIME=05:00:00 POST_TIME=04:00:00 \
 bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
 ```
 
+The submit wrapper now explicitly exports key env vars (`VENV_PATH`, Hugging Face cache vars, pip cache, `TMPDIR`) into batch jobs so venv-based runs are reliable even when cluster defaults do not export your shell env.
+
 Optional (add OOD BDD100K in the same chain):
 
 ```bash

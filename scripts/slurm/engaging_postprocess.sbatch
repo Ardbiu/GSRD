@@ -15,7 +15,24 @@ NUM_SHARDS=${6:-2}
 
 cd "$REPO_ROOT"
 
+ensure_modules() {
+  if ! command -v module >/dev/null 2>&1; then
+    if [[ -f /etc/profile.d/modules.sh ]]; then
+      # shellcheck disable=SC1091
+      source /etc/profile.d/modules.sh
+    elif [[ -f /usr/share/Modules/init/bash ]]; then
+      # shellcheck disable=SC1091
+      source /usr/share/Modules/init/bash
+    fi
+  fi
+  if ! command -v module >/dev/null 2>&1; then
+    echo "ERROR: 'module' command is unavailable in this batch environment." >&2
+    return 2
+  fi
+}
+
 bootstrap_env() {
+  ensure_modules
   unset PYTHONPATH
   unset PYTHONHOME
   export PYTHONNOUSERSITE=1

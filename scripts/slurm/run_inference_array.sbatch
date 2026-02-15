@@ -15,13 +15,15 @@ CONFIG=${1:-configs/engaging_cluster.yaml}
 DATASETS=${2:-coco_val2017}
 DETECTOR=${3:-grounding_dino}
 
-module load anaconda/2023a || true
-source ~/.bashrc || true
-conda activate gsrd || true
+module purge
+module load deprecated-modules
+module load anaconda3/2022.05-x86_64
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate gsrd
 
 export SLURM_ARRAY_TASK_COUNT=64
 
-gsrd inference run \
+python -m gsrd.cli inference run \
   --config "$CONFIG" \
   --dataset "$DATASETS" \
   --detector "$DETECTOR" \

@@ -2,11 +2,12 @@
 set -euo pipefail
 
 # Usage:
-#   bash scripts/slurm/submit_engaging_full_2xh200.sh [config] [detector] [conda_env]
+#   bash scripts/slurm/submit_engaging_full_2xh200.sh [config] [detector] [conda_env] [datasets_csv]
 
-CONFIG=${1:-configs/engaging_cluster.yaml}
+CONFIG=${1:-configs/engaging_low_compute.yaml}
 DETECTOR=${2:-grounding_dino}
 CONDA_ENV_NAME=${3:-gsrd}
+DATASETS=${4:-coco_val2017}
 
 GPU_PARTITION=${GPU_PARTITION:-mit_normal_gpu}
 CPU_PARTITION=${CPU_PARTITION:-mit_normal}
@@ -27,6 +28,7 @@ echo "  repo: ${REPO_ROOT}"
 echo "  config: ${CONFIG}"
 echo "  detector: ${DETECTOR}"
 echo "  conda env: ${CONDA_ENV_NAME}"
+echo "  datasets: ${DATASETS}"
 echo "  gpu partition: ${GPU_PARTITION}"
 echo "  cpu partition: ${CPU_PARTITION}"
 echo "  gpu type: ${GPU_TYPE}"
@@ -39,7 +41,7 @@ PREP_JOB_ID=$(
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \
     "${REPO_ROOT}/scripts/slurm/engaging_prepare.sbatch" \
-    "${CONFIG}" "${DETECTOR}" "${REPO_ROOT}" "${CONDA_ENV_NAME}"
+    "${CONFIG}" "${DETECTOR}" "${DATASETS}" "${REPO_ROOT}" "${CONDA_ENV_NAME}"
 )
 
 INF_JOB_ID=$(
@@ -52,7 +54,7 @@ INF_JOB_ID=$(
     --output="${SLURM_LOG_DIR}/%x_%A_%a.out" \
     --error="${SLURM_LOG_DIR}/%x_%A_%a.err" \
     "${REPO_ROOT}/scripts/slurm/engaging_inference_shard.sbatch" \
-    "${CONFIG}" "${DETECTOR}" "${REPO_ROOT}" "${CONDA_ENV_NAME}" "${NUM_SHARDS}"
+    "${CONFIG}" "${DETECTOR}" "${DATASETS}" "${REPO_ROOT}" "${CONDA_ENV_NAME}" "${NUM_SHARDS}"
 )
 
 POST_JOB_ID=$(
@@ -63,7 +65,7 @@ POST_JOB_ID=$(
     --output="${SLURM_LOG_DIR}/%x_%j.out" \
     --error="${SLURM_LOG_DIR}/%x_%j.err" \
     "${REPO_ROOT}/scripts/slurm/engaging_postprocess.sbatch" \
-    "${CONFIG}" "${DETECTOR}" "${REPO_ROOT}" "${CONDA_ENV_NAME}" "${NUM_SHARDS}"
+    "${CONFIG}" "${DETECTOR}" "${DATASETS}" "${REPO_ROOT}" "${CONDA_ENV_NAME}" "${NUM_SHARDS}"
 )
 
 cat <<EOF

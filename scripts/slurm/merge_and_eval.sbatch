@@ -13,11 +13,13 @@ CONFIG=${1:-configs/engaging_cluster.yaml}
 DATASETS=${2:-coco_val2017}
 DETECTOR=${3:-grounding_dino}
 
-module load anaconda/2023a || true
-source ~/.bashrc || true
-conda activate gsrd || true
+module purge
+module load deprecated-modules
+module load anaconda3/2022.05-x86_64
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate gsrd
 
-gsrd inference merge --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR" --set inference.num_shards=64
-gsrd eval run --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"
-gsrd risk run --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"
-gsrd report generate --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"
+python -m gsrd.cli inference merge --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR" --set inference.num_shards=64
+python -m gsrd.cli eval run --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"
+python -m gsrd.cli risk run --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"
+python -m gsrd.cli report generate --config "$CONFIG" --dataset "$DATASETS" --detector "$DETECTOR"

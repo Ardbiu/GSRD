@@ -5,25 +5,25 @@ runtime:
   workdir: .
 
 paths:
-  data_root: data
-  cache_root: artifacts/cache
-  outputs_root: artifacts/outputs
-  logs_root: artifacts/logs
+  data_root: /home/$USER/gsrd/data
+  cache_root: /home/$USER/gsrd/artifacts/cache_phase_a
+  outputs_root: /home/$USER/gsrd/artifacts/outputs_phase_a
+  logs_root: /home/$USER/gsrd/artifacts/logs_phase_a
 
 datasets:
   coco_val: true
-  bdd100k_val: true
+  bdd100k_val: false
   toy: false
   toy_num_images: 24
   max_images: null
 
 vocab:
-  lists_per_granularity: 5
+  lists_per_granularity: 2
   mixed_ratio: 0.5
   min_terms: 8
   max_terms: 64
-  include_counterfactual: true
-  counterfactual_lists: 3
+  include_counterfactual: false
+  counterfactual_lists: 0
   counterfactual_noise_ratio: 0.2
 
 detectors:
@@ -33,18 +33,6 @@ detectors:
     device: cuda
     score_threshold: 0.05
     max_detections: 300
-  - name: owlvit
-    enabled: false
-    model_id: google/owlvit-base-patch32
-    device: cuda
-    score_threshold: 0.05
-    max_detections: 300
-  - name: mock
-    enabled: false
-    model_id: mock-v1
-    device: cpu
-    score_threshold: 0.05
-    max_detections: 120
 
 inference:
   batch_size: 1
@@ -52,18 +40,18 @@ inference:
   skip_existing: true
   save_logits: false
   prompt_mode: shared_union
-  max_images: null
-  num_shards: 1
+  max_images: 1000
+  num_shards: 2
   shard_index: 0
   split_from_env: true
 
 evaluation:
   iou_threshold: 0.5
-  bootstrap_samples: 50
+  bootstrap_samples: 40
   bootstrap_seed: 123
 
 risk:
-  alphas: [0.05, 0.1, 0.2]
+  alphas: [0.1, 0.2]
   calibration_fraction: 0.25
   strategy: all
   hierarchy_relax_iou: 0.5
@@ -73,9 +61,9 @@ risk:
   min_group_calibration_samples: 20
 
 reporting:
-  figure_dpi: 180
+  figure_dpi: 200
   style: whitegrid
-  title_prefix: GSRD
+  title_prefix: GSRD Phase A Fast
 
 cluster:
   slurm_array_var: SLURM_ARRAY_TASK_ID

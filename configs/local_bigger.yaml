@@ -45,6 +45,8 @@ inference:
   num_workers: 0
   skip_existing: true
   save_logits: false
+  prompt_mode: per_vocab
+  max_images: null
   num_shards: 1
   shard_index: 0
   split_from_env: false

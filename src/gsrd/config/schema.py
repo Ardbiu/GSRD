@@ -54,6 +54,8 @@ class InferenceConfig(BaseModel):
     num_workers: int = 0
     skip_existing: bool = True
     save_logits: bool = False
+    prompt_mode: Literal["per_vocab", "shared_union"] = "shared_union"
+    max_images: int | None = None
     num_shards: int = 1
     shard_index: int = 0
     split_from_env: bool = True

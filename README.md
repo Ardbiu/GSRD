@@ -22,6 +22,10 @@ This codebase evaluates three claims:
   - evaluation (COCO-style metrics + granularity/shift analyses + CIs)
   - post-hoc risk calibration (flat + hierarchy-aware)
   - paper-ready reporting (plots/tables/final summary)
+- Low-compute inference mode:
+  - `inference.prompt_mode=shared_union` runs a single detector forward pass per image
+  - cached shared predictions are projected to each vocabulary list as a lightweight post-process
+  - avoids recomputing image forward passes for every vocabulary setting
 - ECCV-grade statistics:
   - 95% CI over vocabulary-list variation per granularity
   - uncertainty-aware ID→OOD drop estimates
@@ -130,6 +134,12 @@ gsrd report generate --config configs/default.yaml --dataset bdd100k_val --detec
 gsrd run --config configs/default.yaml --stage data,vocab,inference,merge,eval,risk,report
 ```
 
+## Low-Compute Profiles
+
+- `configs/engaging_phase_a_fast.yaml`: fast diagnosis run (about 1k ID images, 2 vocab lists/granularity).
+- `configs/engaging_low_compute.yaml`: paper-core low-compute run (ID only, 5 vocab lists/granularity, shared-union inference cache).
+- `configs/engaging_cluster.yaml`: heavier setting (ID + OOD BDD100K).
+
 ## MIT Engaging Cluster Usage
 
 ### 1) Prepare data + vocab once
@@ -153,7 +163,7 @@ sbatch scripts/slurm/merge_and_eval.sbatch configs/engaging_cluster.yaml coco_va
 sbatch scripts/slurm/merge_and_eval.sbatch configs/engaging_cluster.yaml bdd100k_val grounding_dino
 ```
 
-### Turnkey Full Run On 2x H200
+### Turnkey Low-Compute Run On 2x H200
 
 The script below submits a chained 3-job workflow:
 1. `data+vocab` prep on CPU partition,
@@ -162,7 +172,14 @@ The script below submits a chained 3-job workflow:
 
 ```bash
 cd /path/to/GSRD
-bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_cluster.yaml grounding_dino gsrd
+bash scripts/slurm/submit_engaging_full_2xh200.sh configs/engaging_low_compute.yaml grounding_dino gsrd
+```
+
+Optional (add OOD BDD100K in the same chain):
+
+```bash
+bash scripts/slurm/submit_engaging_full_2xh200.sh \
+  configs/engaging_cluster.yaml grounding_dino gsrd "coco_val2017,bdd100k_val"
 ```
 
 If your CPU partition name differs, override it at submit time:

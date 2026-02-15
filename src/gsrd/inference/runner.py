@@ -12,10 +12,10 @@ from tqdm import tqdm
 from gsrd.config.schema import DetectorConfig, InferenceConfig
 from gsrd.data.datasets import DetectionDataset, get_dataset_spec
 from gsrd.detectors.factory import create_detector
-from gsrd.inference.cache import merge_shards, shard_exists, write_metadata, write_shard
+from gsrd.inference.cache import merge_shards, shard_exists, shard_file_name, write_metadata, write_shard
 from gsrd.inference.schema import PredictionArtifactSpec, make_prediction_metadata
 from gsrd.utils.hashing import stable_hash
-from gsrd.utils.io import read_json, write_json
+from gsrd.utils.io import ensure_dir, iter_jsonl, read_json, write_json, write_jsonl
 from gsrd.utils.system import hardware_summary
 
 LOGGER = logging.getLogger(__name__)
@@ -42,6 +42,44 @@ def _load_vocab_lists(cache_root: Path, dataset_name: str) -> dict[str, list[dic
     if not isinstance(granularities, dict):
         raise ValueError(f"Malformed vocabulary file: {vocab_path}")
     return {k: v for k, v in granularities.items() if isinstance(v, list)}
+
+
+def _collect_union_terms(granularity_lists: dict[str, list[dict[str, Any]]]) -> list[str]:
+    terms: set[str] = set()
+    for vocab_lists in granularity_lists.values():
+        for vocab in vocab_lists:
+            for term in vocab.get("terms", []):
+                terms.add(_normalize_phrase(str(term)))
+    return sorted(terms)
+
+
+def _shared_cache_dir(cache_root: Path, detector_name: str, dataset_name: str) -> Path:
+    return ensure_dir(cache_root / "shared_predictions" / detector_name / dataset_name)
+
+
+def _shared_shard_path(
+    cache_root: Path,
+    detector_name: str,
+    dataset_name: str,
+    shard_index: int,
+    num_shards: int,
+) -> Path:
+    return _shared_cache_dir(cache_root, detector_name, dataset_name) / shard_file_name(shard_index, num_shards)
+
+
+def _shared_meta_path(cache_root: Path, detector_name: str, dataset_name: str) -> Path:
+    return _shared_cache_dir(cache_root, detector_name, dataset_name) / "meta.json"
+
+
+def _shared_shard_exists(
+    cache_root: Path,
+    detector_name: str,
+    dataset_name: str,
+    shard_index: int,
+    num_shards: int,
+) -> bool:
+    path = _shared_shard_path(cache_root, detector_name, dataset_name, shard_index, num_shards)
+    return path.exists() and path.stat().st_size > 0
 
 
 def _normalize_phrase(term: str) -> str:
@@ -118,8 +156,54 @@ def _image_to_row(
     return {"image_id": image_id, "file_name": file_name, "detections": rows}
 
 
-def _filtered_images(dataset: DetectionDataset, num_shards: int, shard_index: int) -> list[Any]:
-    return [item for idx, item in enumerate(dataset.images) if idx % num_shards == shard_index]
+def _project_rows_to_vocab(
+    source_rows: list[dict[str, Any]],
+    vocab_terms: list[str],
+    class_to_term: dict[str, str],
+    save_logits: bool,
+) -> list[dict[str, Any]]:
+    normalized_vocab = [t.lower().strip() for t in vocab_terms]
+    normalized_vocab_lookup = {_normalize_phrase(v): v for v in normalized_vocab}
+    normalized_class_to_term = {_normalize_phrase(k): str(v).lower().strip() for k, v in class_to_term.items()}
+
+    projected: list[dict[str, Any]] = []
+    for row in source_rows:
+        detections: list[dict[str, Any]] = []
+        for det in row.get("detections", []):
+            term = _nearest_term(
+                str(det.get("term", "")),
+                normalized_vocab,
+                normalized_class_to_term,
+                normalized_vocab_lookup,
+            )
+            out_det: dict[str, Any] = {
+                "term": term,
+                "score": float(det["score"]),
+                "bbox": [float(x) for x in det["bbox"]],
+            }
+            if save_logits:
+                out_det["logit"] = float(det.get("logit", det["score"]))
+            detections.append(out_det)
+        projected.append(
+            {
+                "image_id": int(row["image_id"]),
+                "file_name": str(row.get("file_name", "")),
+                "detections": detections,
+            }
+        )
+    return projected
+
+
+def _filtered_images(
+    dataset: DetectionDataset,
+    num_shards: int,
+    shard_index: int,
+    max_images: int | None,
+) -> list[Any]:
+    rows = [item for idx, item in enumerate(dataset.images) if idx % num_shards == shard_index]
+    if max_images is not None and max_images > 0:
+        return rows[:max_images]
+    return rows
 
 
 def run_inference_for_dataset(
@@ -136,7 +220,7 @@ def run_inference_for_dataset(
     granularity_lists = _load_vocab_lists(cache_root, dataset_name)
 
     num_shards, shard_index = _resolve_shards(inference_cfg, slurm_task_var, slurm_count_var)
-    selected_images = _filtered_images(dataset, num_shards, shard_index)
+    selected_images = _filtered_images(dataset, num_shards, shard_index, inference_cfg.max_images)
     LOGGER.info(
         "Dataset=%s | shard %d/%d has %d images",
         dataset_name,
@@ -148,6 +232,142 @@ def run_inference_for_dataset(
     outputs: list[Path] = []
 
     with create_detector(detector_cfg) as detector:
+        if inference_cfg.prompt_mode == "shared_union":
+            union_terms = _collect_union_terms(granularity_lists)
+            if not union_terms:
+                raise ValueError(f"No vocabulary terms found for dataset={dataset_name}")
+
+            shared_shard = _shared_shard_path(
+                cache_root=cache_root,
+                detector_name=detector_cfg.name,
+                dataset_name=dataset_name,
+                shard_index=shard_index,
+                num_shards=num_shards,
+            )
+            if inference_cfg.skip_existing and _shared_shard_exists(
+                cache_root=cache_root,
+                detector_name=detector_cfg.name,
+                dataset_name=dataset_name,
+                shard_index=shard_index,
+                num_shards=num_shards,
+            ):
+                LOGGER.info("Reusing shared union shard: %s", shared_shard)
+                shared_rows = list(iter_jsonl(shared_shard))
+            else:
+                start = time.time()
+                identity_map = {term: term for term in union_terms}
+                shared_rows = []
+                for image_entry in tqdm(
+                    selected_images,
+                    desc=f"{detector_cfg.name}:{dataset_name}:shared-union",
+                ):
+                    image_path = spec.image_dir / image_entry.file_name
+                    if not image_path.exists():
+                        raise FileNotFoundError(f"Image missing: {image_path}")
+                    with Image.open(image_path) as image:
+                        rgb = image.convert("RGB")
+                        detections = detector.predict(rgb, union_terms)
+                    shared_rows.append(
+                        _image_to_row(
+                            image_entry.image_id,
+                            image_entry.file_name,
+                            detections,
+                            union_terms,
+                            identity_map,
+                            inference_cfg.save_logits,
+                        )
+                    )
+                runtime_sec = max(1e-6, time.time() - start)
+                write_jsonl(shared_shard, shared_rows)
+                shared_format_version = make_prediction_metadata(
+                    detector_name=detector_cfg.name,
+                    detector_version=detector.version(),
+                    dataset_name=dataset_name,
+                    granularity="shared_union",
+                    vocab={
+                        "vocab_id": stable_hash({"mode": "shared_union", "terms": union_terms}),
+                        "terms": union_terms,
+                        "class_to_term": {term: term for term in union_terms},
+                        "term_to_classes": {term: [term] for term in union_terms},
+                    },
+                    num_shards=num_shards,
+                )["format_version"]
+                shared_meta = {
+                    "format_version": shared_format_version,
+                    "detector": {
+                        "name": detector_cfg.name,
+                        "version": detector.version(),
+                    },
+                    "dataset": dataset_name,
+                    "mode": "shared_union",
+                    "terms": union_terms,
+                    "num_shards": num_shards,
+                    "shard_stats": {
+                        "shard_index": shard_index,
+                        "num_images": len(shared_rows),
+                        "runtime_sec": runtime_sec,
+                        "images_per_sec": len(shared_rows) / runtime_sec,
+                        "count_for_compute": True,
+                    },
+                }
+                write_json(
+                    _shared_meta_path(cache_root, detector_cfg.name, dataset_name),
+                    shared_meta,
+                )
+                outputs.append(shared_shard)
+
+            for granularity, vocab_lists in granularity_lists.items():
+                for vocab in vocab_lists:
+                    artifact = PredictionArtifactSpec(
+                        detector=detector_cfg.name,
+                        dataset=dataset_name,
+                        granularity=granularity,
+                        vocab_id=vocab["vocab_id"],
+                    )
+                    if inference_cfg.skip_existing and shard_exists(
+                        cache_root, artifact, shard_index, num_shards
+                    ):
+                        LOGGER.info(
+                            "Skipping existing derived shard for %s/%s/%s",
+                            dataset_name,
+                            granularity,
+                            vocab["vocab_id"],
+                        )
+                        continue
+
+                    start = time.time()
+                    projected_rows = _project_rows_to_vocab(
+                        source_rows=shared_rows,
+                        vocab_terms=vocab["terms"],
+                        class_to_term=vocab["class_to_term"],
+                        save_logits=inference_cfg.save_logits,
+                    )
+                    shard_path = write_shard(cache_root, artifact, shard_index, num_shards, projected_rows)
+                    runtime_sec = max(1e-6, time.time() - start)
+                    meta = make_prediction_metadata(
+                        detector_name=detector_cfg.name,
+                        detector_version=detector.version(),
+                        dataset_name=dataset_name,
+                        granularity=granularity,
+                        vocab=vocab,
+                        num_shards=num_shards,
+                    )
+                    meta["inference_mode"] = "shared_union_derived"
+                    meta["source_shared_predictions"] = {
+                        "path": str(shared_shard),
+                        "num_terms": len(union_terms),
+                    }
+                    meta["shard_stats"] = {
+                        "shard_index": shard_index,
+                        "num_images": len(projected_rows),
+                        "runtime_sec": runtime_sec,
+                        "images_per_sec": len(projected_rows) / runtime_sec,
+                        "count_for_compute": False,
+                    }
+                    write_metadata(cache_root, artifact, meta)
+                    outputs.append(shard_path)
+            return outputs
+
         for granularity, vocab_lists in granularity_lists.items():
             for vocab in vocab_lists:
                 artifact = PredictionArtifactSpec(
@@ -197,11 +417,13 @@ def run_inference_for_dataset(
                     vocab=vocab,
                     num_shards=num_shards,
                 )
+                meta["inference_mode"] = "per_vocab"
                 meta["shard_stats"] = {
                     "shard_index": shard_index,
                     "num_images": len(rows),
                     "runtime_sec": runtime_sec,
                     "images_per_sec": len(rows) / runtime_sec,
+                    "count_for_compute": True,
                 }
                 write_metadata(cache_root, artifact, meta)
                 outputs.append(shard_path)
@@ -239,19 +461,30 @@ def merge_inference_artifacts(
 
 def compute_inference_summary(cache_root: Path, output_path: Path) -> Path:
     pred_root = cache_root / "predictions"
+    shared_root = cache_root / "shared_predictions"
     totals = {
         "total_images_processed": 0,
         "total_runtime_sec": 0.0,
         "artifacts": 0,
+        "derived_artifacts": 0,
     }
 
-    if pred_root.exists():
-        for meta_path in pred_root.rglob("meta.json"):
-            meta = read_json(meta_path)
-            shard = meta.get("shard_stats", {})
+    def accumulate_meta(meta_path: Path) -> None:
+        meta = read_json(meta_path)
+        shard = meta.get("shard_stats", {})
+        if bool(shard.get("count_for_compute", True)):
             totals["total_images_processed"] += int(shard.get("num_images", 0))
             totals["total_runtime_sec"] += float(shard.get("runtime_sec", 0.0))
             totals["artifacts"] += 1
+        else:
+            totals["derived_artifacts"] += 1
+
+    if pred_root.exists():
+        for meta_path in pred_root.rglob("meta.json"):
+            accumulate_meta(meta_path)
+    if shared_root.exists():
+        for meta_path in shared_root.rglob("meta.json"):
+            accumulate_meta(meta_path)
 
     totals["avg_images_per_sec"] = (
         totals["total_images_processed"] / totals["total_runtime_sec"]

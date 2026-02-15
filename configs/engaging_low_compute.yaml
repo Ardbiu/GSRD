@@ -5,14 +5,14 @@ runtime:
   workdir: .
 
 paths:
-  data_root: data
-  cache_root: artifacts/cache
-  outputs_root: artifacts/outputs
-  logs_root: artifacts/logs
+  data_root: /home/$USER/gsrd/data
+  cache_root: /home/$USER/gsrd/artifacts/cache
+  outputs_root: /home/$USER/gsrd/artifacts/outputs
+  logs_root: /home/$USER/gsrd/artifacts/logs
 
 datasets:
   coco_val: true
-  bdd100k_val: true
+  bdd100k_val: false
   toy: false
   toy_num_images: 24
   max_images: null
@@ -22,8 +22,8 @@ vocab:
   mixed_ratio: 0.5
   min_terms: 8
   max_terms: 64
-  include_counterfactual: true
-  counterfactual_lists: 3
+  include_counterfactual: false
+  counterfactual_lists: 0
   counterfactual_noise_ratio: 0.2
 
 detectors:
@@ -39,12 +39,6 @@ detectors:
     device: cuda
     score_threshold: 0.05
     max_detections: 300
-  - name: mock
-    enabled: false
-    model_id: mock-v1
-    device: cpu
-    score_threshold: 0.05
-    max_detections: 120
 
 inference:
   batch_size: 1
@@ -53,13 +47,13 @@ inference:
   save_logits: false
   prompt_mode: shared_union
   max_images: null
-  num_shards: 1
+  num_shards: 2
   shard_index: 0
   split_from_env: true
 
 evaluation:
   iou_threshold: 0.5
-  bootstrap_samples: 50
+  bootstrap_samples: 100
   bootstrap_seed: 123
 
 risk:
@@ -70,12 +64,12 @@ risk:
   delta: 0.05
   ucb_method: clopper_pearson
   group_key: timeofday
-  min_group_calibration_samples: 20
+  min_group_calibration_samples: 50
 
 reporting:
-  figure_dpi: 180
+  figure_dpi: 220
   style: whitegrid
-  title_prefix: GSRD
+  title_prefix: GSRD Low Compute
 
 cluster:
   slurm_array_var: SLURM_ARRAY_TASK_ID

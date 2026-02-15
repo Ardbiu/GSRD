@@ -6,11 +6,12 @@
 
 set -euo pipefail
 
-CONFIG=${1:-configs/engaging_cluster.yaml}
+CONFIG=${1:-configs/engaging_low_compute.yaml}
 DETECTOR=${2:-grounding_dino}
-REPO_ROOT=${3:-$PWD}
-CONDA_ENV_NAME=${4:-gsrd}
-NUM_SHARDS=${5:-2}
+DATASETS=${3:-coco_val2017}
+REPO_ROOT=${4:-$PWD}
+CONDA_ENV_NAME=${5:-gsrd}
+NUM_SHARDS=${6:-2}
 
 if [[ -z "${SLURM_ARRAY_TASK_ID:-}" ]]; then
   echo "ERROR: This script must be launched as a Slurm array job." >&2
@@ -31,12 +32,19 @@ source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate "$CONDA_ENV_NAME"
 
 export PYTHONPATH="$REPO_ROOT/src:${PYTHONPATH:-}"
+DATASET_ARGS=()
+IFS=',' read -r -a DATASET_LIST <<< "$DATASETS"
+for ds in "${DATASET_LIST[@]}"; do
+  ds_trimmed="$(echo "$ds" | xargs)"
+  if [[ -n "$ds_trimmed" ]]; then
+    DATASET_ARGS+=(--dataset "$ds_trimmed")
+  fi
+done
 
 echo "[inference] shard ${SLURM_ARRAY_TASK_ID}/${SLURM_ARRAY_TASK_COUNT} on detector=${DETECTOR}"
-gsrd inference run \
+python -m gsrd.cli inference run \
   --config "$CONFIG" \
-  --dataset coco_val2017 \
-  --dataset bdd100k_val \
+  "${DATASET_ARGS[@]}" \
   --detector "$DETECTOR" \
   --set inference.num_shards="$NUM_SHARDS" \
   --set inference.split_from_env=true \
